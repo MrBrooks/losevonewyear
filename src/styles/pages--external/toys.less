@@ -1,0 +1,87 @@
+.choose-toys{
+  padding: 40px 40px 0;
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .to-tree{
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .clear-all{
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 20px;
+    color: @green;
+    font-weight: 700;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .selector{
+    text-align: left;
+    margin-bottom: 35px;
+    &>div{
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .label{
+    font-weight: 700;
+    // color: @blue;
+    margin-right: 80px;
+    width: 160px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+  .controls, .card{
+    width: 60%;
+    float: left;
+  }
+  .card{
+    width: 40%;
+    max-width: 400px;
+  }
+  .items-slider{
+    width: 240px;
+    position: relative;
+    text-align: center;
+    .pic{
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+    .owl-next{
+      position: absolute;
+      top: 0;
+      right: -40px;
+    }
+    .owl-prev{
+      position: absolute;
+      top: 0;
+      left: -40px;
+    }
+  }
+  .message{
+    position: relative;
+    .btn{
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      z-index: 1000;
+
+    }
+  }
+}
