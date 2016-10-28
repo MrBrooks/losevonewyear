@@ -3708,7 +3708,7 @@ This must be run when you have at least 2 sprites.
 
 .sprites(@spritesheet-sprites);
 */
-.svg-sprite--tree-1
+.svg-sprite--tree-2
 {
     width: 380px;
     height: 380px;
@@ -3718,11 +3718,11 @@ This must be run when you have at least 2 sprites.
     background-position: -2px -2px;
     background-size: 876px 818px;
 }
-.no-svg .svg-sprite--tree-1
+.no-svg .svg-sprite--tree-2
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
-.svg-sprite--tree-2
+.svg-sprite--tree-1
 {
     width: 380px;
     height: 380px;
@@ -3732,7 +3732,7 @@ This must be run when you have at least 2 sprites.
     background-position: -384px -2px;
     background-size: 876px 818px;
 }
-.no-svg .svg-sprite--tree-2
+.no-svg .svg-sprite--tree-1
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
@@ -3778,6 +3778,20 @@ This must be run when you have at least 2 sprites.
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
+.svg-sprite--fiber
+{
+    width: 24px;
+    height: 78px;
+
+    background-image: url('../img/sprites/svg/svg-sprite.svg');
+    background-repeat: no-repeat;
+    background-position: -766px -112px;
+    background-size: 876px 818px;
+}
+.no-svg .svg-sprite--fiber
+{
+    background-image: url('../img/sprites/svg/svg-sprite.png');
+}
 .svg-sprite--toy-13
 {
     width: 40px;
@@ -3785,7 +3799,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -112px;
+    background-position: -792px -112px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-13
@@ -3799,7 +3813,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -808px -112px;
+    background-position: -834px -112px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-12
@@ -3813,7 +3827,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -184px;
+    background-position: -766px -192px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-11
@@ -3827,7 +3841,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -808px -184px;
+    background-position: -808px -192px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-10
@@ -3841,7 +3855,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -256px;
+    background-position: -766px -263px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-1
@@ -3855,7 +3869,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -256px;
+    background-position: -810px -263px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-9
@@ -3869,7 +3883,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -325px;
+    background-position: -766px -332px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-8
@@ -3883,7 +3897,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -808px -325px;
+    background-position: -808px -332px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-6
@@ -3897,7 +3911,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -392px;
+    background-position: -766px -400px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-2
@@ -3911,7 +3925,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -392px;
+    background-position: -810px -400px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-5
@@ -3925,7 +3939,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -456px;
+    background-position: -766px -464px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-1
@@ -3939,7 +3953,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -456px;
+    background-position: -810px -464px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-4
@@ -3953,7 +3967,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -515px;
+    background-position: -766px -523px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--toy-4
@@ -3967,7 +3981,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -515px;
+    background-position: -810px -523px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-7
@@ -3981,7 +3995,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -570px;
+    background-position: -766px -577px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-6
@@ -3995,7 +4009,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -570px;
+    background-position: -810px -577px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-9
@@ -4009,7 +4023,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -621px;
+    background-position: -766px -629px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-8
@@ -4023,7 +4037,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -809px -621px;
+    background-position: -809px -629px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-10
@@ -4037,7 +4051,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -673px;
+    background-position: -766px -680px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-5
@@ -4051,7 +4065,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -673px;
+    background-position: -810px -680px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--ball-3
@@ -4107,7 +4121,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -724px;
+    background-position: -132px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-2
@@ -4121,7 +4135,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -810px -724px;
+    background-position: -175px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-7
@@ -4135,24 +4149,10 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -132px -766px;
+    background-position: -218px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-4
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-3
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -175px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-3
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
@@ -4163,10 +4163,24 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -218px -766px;
+    background-position: -261px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-5
+{
+    background-image: url('../img/sprites/svg/svg-sprite.png');
+}
+.svg-sprite--star-3
+{
+    width: 41px;
+    height: 39px;
+
+    background-image: url('../img/sprites/svg/svg-sprite.svg');
+    background-repeat: no-repeat;
+    background-position: -304px -766px;
+    background-size: 876px 818px;
+}
+.no-svg .svg-sprite--star-3
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
@@ -4177,7 +4191,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -261px -766px;
+    background-position: -347px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-8
@@ -4191,7 +4205,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -304px -766px;
+    background-position: -390px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-6
@@ -4205,7 +4219,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -346px -766px;
+    background-position: -432px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-1
@@ -4219,7 +4233,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -389px -766px;
+    background-position: -475px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-9
@@ -4233,7 +4247,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -431px -766px;
+    background-position: -517px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--star-10
@@ -4247,7 +4261,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -473px -766px;
+    background-position: -559px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--arrow_right
@@ -4261,7 +4275,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -509px -766px;
+    background-position: -595px -766px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--arrow_left
@@ -4275,7 +4289,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -545px -766px;
+    background-position: -766px -731px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--inst
@@ -4289,7 +4303,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -572px -766px;
+    background-position: -793px -731px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--fb
@@ -4303,7 +4317,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -599px -766px;
+    background-position: -820px -731px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--vk
@@ -4317,7 +4331,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -626px -766px;
+    background-position: -847px -731px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--youtube
@@ -4331,7 +4345,7 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -850px -112px;
+    background-position: -850px -192px;
     background-size: 876px 818px;
 }
 .no-svg .svg-sprite--trash
@@ -4691,7 +4705,17 @@ h1
     line-height: 1.1;
 
     margin: 0;
+    margin-top: 20px;
     margin-bottom: 35px;
+    margin-bottom: 20px;
+}
+@media screen and (max-height: 800px)
+{
+    h1
+    {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
 }
 h2,
 h3
@@ -4849,6 +4873,7 @@ section #content-slider .owl-item
 .trall,
 footer .socials li,
 .logo,
+.logo .svg-sprite--fiber,
 .btn,
 .btn:after
 {
@@ -4868,16 +4893,23 @@ footer .socials li,
 }
 .logo
 {
+    position: absolute;
+    right: 0;
+    left: 0;
+
     display: inline-block;
 
+    width: 108px;
+    height: 108px;
     margin: auto;
-    margin-top: 70px;
-    margin-bottom: 35px;
+    margin-top: 0;
+
+    -webkit-transition-delay: 1000ms;
+            transition-delay: 1000ms;
 }
 .card-start .logo
 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: -30px;
 
     -webkit-transform: scale(.7);
         -ms-transform: scale(.7);
@@ -4886,13 +4918,25 @@ footer .socials li,
         -ms-transform-origin: center;
             transform-origin: center;
 }
-@media screen and (max-height: 800px)
+.logo > div
 {
-    .card-start .logo
-    {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: auto;
+}
+.logo .svg-sprite--logo
+{
+    top: 50px;
+}
+.logo .svg-sprite--fiber
+{
+    top: -20px;
+}
+.card-start .logo .svg-sprite--fiber
+{
+    top: -200px;
 }
 .btn
 {
@@ -4915,6 +4959,10 @@ footer .socials li,
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
+}
+a:hover + .btn
+{
+    text-decoration: none;
 }
 .btn:after
 {
@@ -4978,16 +5026,18 @@ footer .socials li,
 
     -webkit-transition: all 500ms;
             transition: all 500ms;
+    -webkit-transition-delay: 1500ms;
+            transition-delay: 1500ms;
 }
 .card-start .steps
 {
-    margin-top: 0;
+    margin-top: 120px;
 }
 @media screen and (max-height: 800px)
 {
     .card-start .steps
     {
-        margin-top: -20px;
+        margin-top: 100px;
     }
 }
 .steps-bar
@@ -5675,6 +5725,10 @@ footer .socials li,
     width: 30px;
     height: 30px;
     margin: auto;
+}
+.choose-toys .items-slider .pic img
+{
+    height: 100%;
 }
 .choose-toys .items-slider .owl-next
 {
