@@ -4,6 +4,12 @@ h1{
   margin: 0;
   margin-bottom: 35px;
   line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @media screen and (max-height: @minh){
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
 }
 h2,h3{
   color: @blue;
@@ -149,18 +155,44 @@ section{
 .logo{
   display: inline-block;
   margin: auto;
-  margin-top: 70px;
-  margin-bottom: 35px;
+  // margin-top: 70px;
+  // margin-bottom: 35px;
+  // margin: 0;
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  left: 0;
+  right: 0;
+  margin-top: 0;
   // position: absolute;
   &:extend(.trall);
+  transition-delay: 1000ms;
   .card-start &{
     transform-origin: center;
     transform: scale(0.7);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    @media screen and (max-height: @minh){
-      margin-top: 0;
-      margin-bottom: 0;
+    // margin-top: 10px;
+    // margin-bottom: 10px;
+    margin-top: -30px;
+    // @media screen and (max-height: @minh){
+    //   margin-top: 0;
+    //   margin-bottom: 0;
+    // }
+  }
+  &>div{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  .svg-sprite--logo{
+    top: 50px;
+  }
+  .svg-sprite--fiber{
+    top: -20px;
+    &:extend(.trall);
+
+    .card-start &{
+      top: -200px;
     }
   }
 }
@@ -177,7 +209,9 @@ section{
   border-radius: 0;
   box-shadow: none;
   outline: none;
-
+  a:hover+&{
+    text-decoration: none;
+  }
   &:extend(.trall);
 
   &:after{
@@ -226,10 +260,11 @@ section{
   padding: 0 40px;
   margin-top: -300px;
   transition: all 500ms;
+  transition-delay: 1500ms;
   .card-start &{
-    margin-top: 0;
+    margin-top: 120px;
     @media screen and (max-height: @minh){
-      margin-top: -20px;
+      margin-top: 100px;
     }
   }
 
