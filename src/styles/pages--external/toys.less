@@ -49,8 +49,64 @@
     float: left;
   }
   .card{
-    width: 40%;
-    max-width: 400px;
+    // width: 40%;
+    position: relative;
+    overflow: hidden;
+    max-width: 380px;
+    canvas{
+      z-index: 1000;
+    }
+    .message{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 380px;
+      height: 380px;
+      z-index: 1001;
+      &:extend(.trall);
+      &.ok{
+        left: 380px;
+      }
+    }
+    .card-backs{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      width: 380px;
+      height: 380px;
+      img{
+        position: absolute;
+        left: 380px;
+        top: 0;
+        width: 100%;
+        &:extend(.trall);
+        &.active{
+          left: 0;
+        }
+      }
+    }
+    .trash{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background-color: @red;
+      z-index: 999;
+      &:extend(.trall);
+      &:hover{
+        background-color: @red-dark;
+      }
+      div{
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+      }
+    }
   }
   .items-slider{
     width: 240px;
@@ -85,6 +141,31 @@
       bottom: 10px;
       z-index: 1000;
 
+    }
+  }
+  .card-backgrounds{
+    .radioo{
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 6px;
+      cursor: pointer;
+    }
+    label{
+      padding: 2px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      &:extend(.trall);
+    }
+    input:checked+label{
+      // border: 2px solid @blue;
+      border-color: @blue;
+    }
+    input{
+      display: none;
+    }
+    img{
+      width: 40px;
     }
   }
 }

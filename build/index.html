@@ -70,6 +70,53 @@
     <!-- Set external libraries -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/style.min.css" />
+    <!-- PRELOADER STYLE -->
+    <style>
+        @-webkit-keyframes pulse {
+          from {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+          }
+          to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+          }
+        }
+        @keyframes pulse {
+          from {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+          }
+          to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+          }
+        }
+        .preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          text-align: center;
+          display: table;
+          z-index: 9999;
+          background-color: #fff;
+          -webkit-transition: all 1000ms;
+          transition: all 1000ms;
+          -webkit-transform-origin: center;
+                  transform-origin: center;
+          -webkit-animation: pulse 1000ms cubic-bezier(0, 0, 0.26, 0.95) infinite alternate;
+                  animation: pulse 1000ms cubic-bezier(0, 0, 0.26, 0.95) infinite alternate;
+        }
+        .preloader.uppp {
+          top: -200%;
+        }
+        .preloader > div {
+          display: table-cell;
+          vertical-align: middle;
+        }
+    </style>
 </head>
 
     <body>
@@ -77,7 +124,14 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-        <header>
+        <div id="preloader" class="preloader">
+  <div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-457 456.7 108 133.3" width="200"><path d="M-349 535.4c0 29.8-24.2 54-54 54s-53.9-24.2-53.9-54 24.2-54 54-54 53.9 24.2 53.9 54z" fill="#62BA47"/><g fill="#FFF"><path d="M-416.5 527.7c-4.4.5-5.7 5.8-5.8 9.5v1.6c0 1.7-.1 3.1-.3 4.8-.1.7-.3 2.1-.5 2.1-1.6.2-2.9-2.3-3.3-3.4-1.1-2.8-1.9-5.6-2.4-8.5-.5-3.1-.9-6.4-1.1-9.6-.1-1.3-.1-2.6-.1-3.9 0-.5 0-1 .1-1.6 0-.4.1-.9.1-.9.4-2.3-2.9-.1-3.6.9-3.6 6.3-2.5 13.7-2.4 20.5 0 1.8-.1 3.7-.4 5.6-.2 1.3-.4 3.5-1.5 4.5-.7.7-1.9.1-2.4-.2-.9-.5-1.4-1.4-1.5-2.4-.2-1-1.3-.5-1.9.1-.8.8-1.6 2.2-1.4 3.2.4 2.4 2.6 4.6 5.1 3.8 4-1.2 5.7-6 6.7-9.7.5-1.8.7-3.6.8-5.5.6 2.7 1.4 5.3 2.6 7.7.9 1.8 2.5 3.6 4.8 3.2 1.7-.3 2.9-2.1 3.7-4.2.8 1.8 2 3.1 4 2.9 2.2-.2 4.1-2.6 4.9-4.4 1-2.2 1.3-4.6 1.2-6.8.2-3-.7-9.8-5.4-9.3zm1.5 15.6c-.1.4-.2.9-.4 1.3-.9-.1-1.5-1.4-1.8-2-.7-1.5-1-3.1-1.2-4.7-.2-1.7-.1-3.4.2-5.1.1-.4.2-.9.4-1.3 2.3 1.5 2.7 4.3 2.9 6.7.3 1.7.3 3.4-.1 5.1zM-362.8 534.1c-4.8-1.8-7.6 4.8-8.4 8.3-.8 3.4-1.8 9.4 2.3 11.1 2 .9 4.4-.7 5.6-2 1.5-1.6 2.4-3.8 3-6 1.1-3.4 1.9-9.8-2.5-11.4zm-2.8 15.5c-.2.4-.4.8-.7 1.1-.7-.5-1-2-1.1-2.7-.3-1.7-.1-3.4.2-5s.8-3.3 1.6-4.8c.2-.4.4-.7.7-1.1 1.8 2.1 1.3 5.1.9 7.6-.5 1.7-.9 3.4-1.6 4.9zM-375.9 534.9c.9-1.2 1.8-2.5 2.6-3.7 1.8-2.7 3.5-5.9 3.4-9.1-.2-3.1-4.4-3.3-6.5-2.2-3.1 1.5-4.9 4.8-5.8 8-1.2 4.2-1.8 8.4-2 12.6v.1c-1.5 1.8-4.7 5.6-7.1 4-.6-.4-.9-1.2-1.2-2 2-2.1 3.7-4.2 5.3-6.7 1.4-2.2 2.4-5.9-.3-7.4-2.3-1.3-5.3.2-6.9 2.1-1.6 1.9-2.3 4.4-2.5 6.8-.1 1.3-.3 3.5 0 5.6-1.4.9-3.2 1.4-4.8 1.1-1.9-.4-2.5-2.3-2.9-3.8-.5-2.2-.4-4.6 0-6.8.1-.7.3-1.4.5-2.1.1-.2.1-.3.2-.5 1.1.5 1.6 2.2 1.9 3.1.5 1.6 4.6-1 4.2-2.5-.5-1.6-1.1-3.2-2.9-4-1.7-.8-4 .6-5 1.6-2.9 2.9-3.2 7.3-3 11.1.1 2.5.7 5.6 2.8 6.9 2.9 1.8 6.9.2 9.8-1.5.7 1.8 2.1 3.1 4.4 2.8 2.9-.4 5.5-2 7.6-4 .1 2.2.6 4.6 2.2 5.5 2.5 1.5 5.7-.2 7.4-2.3 2.2-2.8 3.4-6.7 2.2-10.1-.7-1.9-2.2-2.5-3.6-2.6zm-16.2-1.8c.2-.6.4-1.2.8-1.8 1.2.3 1.4 1.8 1.2 2.7-.2 1.8-1.4 3.6-2.8 5.2v-.9c-.1-1.7.3-3.5.8-5.2zm15.6-8.9c.3-.6.7-1.3 1.2-1.8l.1-.1c1.9 2.1.1 5-.9 7-1 1.9-2.2 3.9-3.5 5.7.3-1.9.6-3.7 1.1-5.5s1-3.6 2-5.3zm-1 22.1c-.1.2-.3.6-.5.8-.1 0-.3 0-.4-.1-1.2-.6-1.3-3.2-1.4-4.2-.1-.9-.1-1.8-.1-2.8.5-.6 1-1.1 1.5-1.7 1.1-.7 1.8.7 2.1 1.8.3 2-.5 4.5-1.2 6.2z"/></g><path d="M-428.3 486.9c.7-.3 1.5-.5 2.2-.7.3-.7.9-1.3 1.9-1.4 4.5-.4 8.9-1.2 13.3-1.9 4.5-.7 9-1 13.5-1.2 6.6-.3 14 0 19.7 3.7.8.5 1.5 1.2 2 2.1 1.3-2.1 2.9-6.5-.3-10.6-3.4-4.4-6.1-4.8-6.1-4.8.5-5.7-29.5-22.6-44.9-12-11.8 8.2-12.9 15.2-16.2 18.5-3.3 3.3-5.3 3.6-4.7 4 .6.3 3.1.9 8.5.4 5.4-.4 7.6-2.8 7.6-2.8s-.6 1.9-.3 5.3c.4 3.4 2.2 3.6 2.2 3.6 0-.8.5-1.8 1.6-2.2z" fill-rule="evenodd" clip-rule="evenodd" fill="#0095B7"/><path d="M-449 482.5c0 .1 0 .1.1.1.6.3 3.1.9 8.5.4 5.4-.4 7.6-2.8 7.6-2.8s-1.7 2.3-1.4 5.7c2.8-.9 1.9-.1 8.9-3.9 7-3.7 42.5-9.8 42.5-9.8s-26.3-4.4-32.1-3.2c-5.8 1.2-12.1 5.4-13.4 5.5-1.3.1-.1-5.8 0-6.2.1-.4-3.6 7.2-5.4 9.9-1.9 2.6-3 2.6-8.7 3.5-2.4.4-4.7.6-6.6.8z" fill-rule="evenodd" clip-rule="evenodd" fill="#048499"/><path d="M-376.8 488.7c4.2-1.4 4.1-9.6-1-14.2-8.3-7.5-46-4.8-55 5.7 0 0-1.7 2.4-1.4 5.7.4 3.4 3.3 3.2 3.3 3.2s9.1-4.3 29.3-5.7c20.2-1.3 24.8 5.3 24.8 5.3z" fill-rule="evenodd" clip-rule="evenodd" fill="#EDEDED"/><path d="M-451.1 488.3c3 1.3 6.5-.1 7.8-3.1 1.2-3-.3-6.4-3.3-7.7s-6.5.1-7.8 3.1c-1.2 3 .2 6.4 3.3 7.7z" fill-rule="evenodd" clip-rule="evenodd" fill="#DFDFDE"/><path d="M-446.7 477.5c1.2.5 2.2 1.4 2.9 2.4.1 1 0 2-.4 3-1.2 3-4.7 4.4-7.8 3.1-1.2-.5-2.2-1.4-2.9-2.4-.1-1 0-2 .4-3 1.3-3 4.8-4.4 7.8-3.1z" fill-rule="evenodd" clip-rule="evenodd" fill="#EDEDED"/><path d="M-430.8 489.2s9.1-4.3 29.3-5.7c14.8-1 21.2 2.3 23.6 4.1.5.4.8.7 1 .9.1.2.2.2.2.2.3-.1.6-.2.8-.4.3-.2.5-.4.7-.6.6-.7 1.1-1.6 1.3-2.6-.1-.1-.2-.3-.6-.6-1.1-1-4-3-10.1-4.1-3.5-.6-8.1-.9-14.1-.5-20.1 1.4-29.3 5.7-29.3 5.7s-.9.1-1.7-.5c-.2-.1-.5-.3-.7-.6-.4-.5-.8-1.2-.9-2.2-.2-1.7.1-3.1.5-4.1-.8.6-1.4 1.2-2 1.9 0 0-1.7 2.4-1.4 5.7.5 3.6 3.4 3.4 3.4 3.4z" fill-rule="evenodd" clip-rule="evenodd" fill="#DDD"/></svg>
+    </div>
+  </div>
+</div>
+<header>
   <div class="logo">
     <div class="svg-sprite--fiber"></div>
     <div class="svg-sprite--logo"></div>
@@ -135,73 +189,81 @@
         <div class="selector">
           <div class="label">Шарики</div>
           <div class="items-slider">
-            <!-- (.pic>img[src="img/svg/ball-$.svg"])*10 -->
-            <div class="pic"><img src="img/svg/ball-1.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-2.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-3.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-4.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-5.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-6.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-7.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-8.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-9.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/ball-10.svg" alt=""></div>
+            <!-- (.pic[data-type="ball" data-index="$"]>img[src="img/svg/ball-$.svg"])*10 -->
+            <div class="pic" data-type="ball" data-index="1"><img src="img/svg/ball-1.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="2"><img src="img/svg/ball-2.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="3"><img src="img/svg/ball-3.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="4"><img src="img/svg/ball-4.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="5"><img src="img/svg/ball-5.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="6"><img src="img/svg/ball-6.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="7"><img src="img/svg/ball-7.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="8"><img src="img/svg/ball-8.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="9"><img src="img/svg/ball-9.svg" alt=""></div>
+            <div class="pic" data-type="ball" data-index="10"><img src="img/svg/ball-10.svg" alt=""></div>
           </div>
         </div>
         <div class="selector">
           <div class="label">Игрушки</div>
           <div class="items-slider">
-           <div class="pic"><img src="img/svg/toy-1.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-2.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-3.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-4.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-5.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-6.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-7.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-8.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-9.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-10.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-11.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-12.svg" alt=""></div>
-           <div class="pic"><img src="img/svg/toy-13.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="1"><img src="img/svg/toy-1.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="2"><img src="img/svg/toy-2.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="3"><img src="img/svg/toy-3.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="4"><img src="img/svg/toy-4.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="5"><img src="img/svg/toy-5.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="6"><img src="img/svg/toy-6.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="7"><img src="img/svg/toy-7.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="8"><img src="img/svg/toy-8.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="9"><img src="img/svg/toy-9.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="10"><img src="img/svg/toy-10.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="11"><img src="img/svg/toy-11.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="12"><img src="img/svg/toy-12.svg" alt=""></div>
+             <div class="pic" data-type="toy" data-index="13"><img src="img/svg/toy-13.svg" alt=""></div>
           </div>
         </div>
         <div class="selector">
           <div class="label">Звезды</div>
           <div class="items-slider">
-            <div class="pic"><img src="img/svg/star-1.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-2.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-3.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-4.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-5.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-6.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-7.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-8.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-9.svg" alt=""></div>
-            <div class="pic"><img src="img/svg/star-10.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="1"><img src="img/svg/star-1.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="2"><img src="img/svg/star-2.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="3"><img src="img/svg/star-3.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="4"><img src="img/svg/star-4.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="5"><img src="img/svg/star-5.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="6"><img src="img/svg/star-6.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="7"><img src="img/svg/star-7.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="8"><img src="img/svg/star-8.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="9"><img src="img/svg/star-9.svg" alt=""></div>
+            <div class="pic" data-type="star" data-index="10"><img src="img/svg/star-10.svg" alt=""></div>
           </div>
         </div>
         <div class="selector">
           <div class="label">Фоны</div>
-          <div class="items-slider">
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
-            <div class="pic"><img src="http://placehold.it/30" alt=""></div>
+          <div class="card-backgrounds">
+            <div class="radios">
+              <!-- (.radio>label[for="back-$"]>img[src="img/svg/back-$.svg"]^+input#back-$[type="radio"])*4 -->
+              <div class="radioo"><input name="background" value="1" type="radio" id="back-1" checked><label for="back-1" data-index="1"><img src="img/svg/back-1.svg" alt=""></label></div>
+              <div class="radioo"><input name="background" value="2" type="radio" id="back-2" ><label for="back-2" data-index="2"><img src="img/svg/back-2.svg" alt=""></label></div>
+              <div class="radioo"><input name="background" value="3" type="radio" id="back-3"><label for="back-3" data-index="3"><img src="img/svg/back-3.svg" alt=""></label></div>
+              <div class="radioo"><input name="background" value="4" type="radio" id="back-4"><label for="back-4" data-index="4"><img src="img/svg/back-4.svg" alt=""></label></div>
+            </div>
           </div>
         </div>
         <span class="clear-all green">Удалить все</span>
-        <button data-nav="card-message" class="btn btn--green navigation">Хорошо</button>
+        <button data-nav="card-message" class="btn btn--green navigation">Готово</button>
       </div>
-      <div class="card">
+      <div id="card-builder" class="card">
         <div class="message">
-          <button class="btn btn--normal">Готово</button>
+          <button class="btn btn--normal">Хорошо</button>
           <img src="img/svg/onboarding.svg" alt="">
+        </div>
+        <canvas id="canvas" width="380" height="380"></canvas>
+        <div class="card-backs">
+          <img class="active" src="img/svg/back-full-1.svg" alt="" data-index="1">
+          <img src="img/svg/back-full-2.svg" alt="" data-index="2">
+          <img src="img/svg/back-full-3.svg" alt="" data-index="3">
+          <img src="img/svg/back-full-4.svg" alt="" data-index="4">
+        </div>
+        <div class="trash">
+          <div class="svg-sprite--trash"></div>
         </div>
       </div>
     </div>
@@ -219,8 +281,11 @@
       </div>
     </div>
     <div class="content mid choose-send">
+      <div class="navigation to-message" data-nav="card-message">К посланию</div>
       <h2>Открытка готова! <br>Можно отправлять!</h2>
-      <div id="final-card"></div>
+      <div id="final-card">
+        <img src="http://placehold.it/760x380" alt="">
+      </div>
       <div class="share-block">
         <h3>Отправить сообщением  в социальной сети:</h3>
         <div class="descr">Скопируйте ссылку и вставьте в личное <br>сообщение Вконтакте, Facebook или Одноклассники:</div>
@@ -241,13 +306,13 @@
         </div>
         <div class="mail-data">
           <div class="names">
-            <input type="text" name="name-from">
-            <input type="text" name="name-to">
+            <input type="text" name="name-from" placeholder="*От кого">
+            <input type="text" name="name-to" placeholder="*Кому">
           </div>
           <div class="address">
-            <input type="text" name="index">
-            <input type="text" name="city">
-            <input type="text" name="address">
+            <input type="text" name="index" placeholder="*Индекс">
+            <input type="text" name="city" placeholder="*Город">
+            <input type="text" name="address" placeholder="*Адрес">
           </div>
         </div>
         <div class="index-link"><a href="">Узнать индекс</a></div>
@@ -318,18 +383,28 @@
   <a href=""><button class="btn btn--normal">Основной сайт</button></a>
   </div>
   <div class="socials">
+    <div id="sound-btn" class="sound">
+      <div class="soundon">
+        <div class="svg-sprite--sound_off"></div>
+        <div class="svg-sprite--sound_on"></div>
+      </div>
+      <div class="soundof"></div>
+    </div>
     <ul>
       <li><a href=""><div class="svg-sprite--vk"></div></a></li>
       <li><a href=""><div class="svg-sprite--inst"></div></a></li>
       <li><a href=""><div class="svg-sprite--fb"></div></a></li>
       <li><a href=""><div class="svg-sprite--youtube"></div></a></li>
     </ul>
-    <div class="hashtag blue">#вместесЛосево</div>
+    <div class="hashtag green">#вместесЛосево</div>
   </div>
   <div class="copyright">
     <div>© Группа компаний «Лосево»  2016</div>
-    <div><a href="http://mbrooks.ru">©Website developed by Mr. Brooks</a></div>
+    <div><a href="http://mbrooks.ru">© Website developed by Mr. Brooks</a></div>
   </div>
+  <audio id="music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 </footer>
 
 <!-- JavaScript-->

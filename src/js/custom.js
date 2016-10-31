@@ -1,6 +1,12 @@
 /**************************************/
 /* Custom JavaScript files supervisor */
 /**************************************/
+
+$(window).load(function(){
+  setTimeout(function(){
+    $("#preloader").addClass("uppp");
+  },2000);
+});
 $(document).ready(function() {
 
     /* Custom */
@@ -11,6 +17,8 @@ $(document).ready(function() {
   var nav = new Navigation();
   var card_data = new CardData();
   BackgroundParalax();
+  SoundControl();
+  var card_builder = new CardBuilder();
 
 
   
@@ -37,7 +45,7 @@ $(document).ready(function() {
       ]
     }
   ]);
-});
+
 
 function BackgroundParalax(){
   var scene = $("#scene"), items;
@@ -71,9 +79,23 @@ function BackgroundParalax(){
 }
 
 function CardData(){
+  var self = this;
+  var buffer = [];
   var card = {
     tree: 1,
-    toys: [{}],
+    background: 2,
+    toys: [
+      {id: 1, top: 10, left: 10, scale: 1},
+      {id: 3, top: 10, left: 10, scale: 1},
+    ],
+    stars: [
+      {id: 1, top: 10, left: 10, scale: 1},
+      {id: 3, top: 10, left: 10, scale: 1},
+    ],
+    balls: [
+      {id: 1, top: 10, left: 10, scale: 1},
+      {id: 3, top: 10, left: 10, scale: 1},
+    ],
   };
 
   var tree_slider = $('#tree-slider').owlCarousel({
@@ -89,7 +111,138 @@ function CardData(){
     navText: ['<div class="svg-sprite--arrow_left"></div>', '<div class="svg-sprite--arrow_right"></div>'],
     dots: false,
   });
+  // tree_slider.on("",function());
 
+  self.update = function(what){
+    switch(what){
+      case "tree": 
+        card.tree = parseInt(tree_slider.find(".active [data-tree]").attr("data-tree"));
+        break;
+    }
+  };
+}
+
+function CardBuilder(){
+  var elements, background_btns, card_builder, message, message_close_btn, backgrounds, canvas, tree_id, tree;
+
+  this.setTree = function(id){
+    if(!tree || (tree_id !== id)){
+      tree_id = id;
+      fabric.Image.fromURL("img/svg/tree-"+tree_id+".svg", function(el){
+        if(tree){
+          tree.remove();
+        }
+        
+        el.selectable  = false;
+        el.scaleToHeight(380);
+        el.hoverCursor = "auto";
+        canvas.add(el);
+        el.center();
+        el.setCoords();
+        el.moveTo(0);
+        tree = el;
+      });
+    }
+    
+  };
+
+  function init(){
+    elements = $(".selector .pic");
+    background_btns = $(".selector label");
+    card_builder = $("#card-builder");
+    backgrounds = card_builder.find(".card-backs img");
+    message = card_builder.find(".message");
+    message_close_btn = card_builder.find(".btn");
+    canvas = new fabric.Canvas('canvas');
+    tree_id = 1;
+
+
+
+    //events
+    elements.on("dblclick", function(e){
+
+      console.log("elements on double click");
+      var type = $(this).attr('data-type'),
+          index = parseInt($(this).attr('data-index'));
+      switch(type){
+        case "ball":
+          type = "ball";
+          break;
+        case "star":
+          type = "star";
+          break;
+        case "toy":
+          type = "toy";
+          break;
+        default: throw Error("Unexpected element data-type in CardBuilder init()");
+      }
+      var path = "img/svg/";
+      fabric.Image.fromURL(path+type+"-"+index+".svg", function(el){
+        el.scaleToWidth(40);
+        el.lockRotation = true
+        el.hasRotatingPoint = false;
+        el.lockScalingFlip = true;
+        el.lockSkewingX = true;
+        el.lockSkewingY = true;
+        el.lockUniScaling = true;
+        canvas.add(el);
+        el.center();
+        el.setCoords();
+        el.bringToFront();
+        // console.log(el.getCenterPoint());
+        // el.on("selected",function(e){
+        //   console.log("selected");
+        // });
+        el.on("moving",function(e){
+          var center = this.getCenterPoint();
+          if( center.x >= 320 && center.y >= 320){
+            this.remove();
+          }
+        });
+        // canvas.centerObject(el);
+      });
+    });
+    background_btns.on("click", function(e){
+
+      console.log("backgound on click");
+      var index = parseInt($(this).attr("data-index"));
+      backgrounds.removeClass("active").filter("[data-index='"+index+"']").addClass("active");
+    });
+    message_close_btn.on("click",function(){
+      message.addClass("ok");
+    });
+  }
+
+  function inTrash(){
+
+  }
+
+  function getTree(){ 
+    return parseInt(tree_slider.find(".active [data-tree]").attr("data-tree"));
+  }
+
+  init();
+
+}
+
+function SoundControl(){
+  var btn = $("#sound-btn"),
+      sound_flag = true,
+      audio = document.getElementById("music");
+
+  btn.on("click",function(){
+    $(this).toggleClass("active");
+    toggle();
+  });
+
+  function toggle(){
+    sound_flag = sound_flag? false : true;
+    if( sound_flag){
+      audio.play();
+    } else{
+      audio.pause();
+    }
+  }
 }
 
 function Navigation(){
@@ -132,6 +285,7 @@ function Navigation(){
         break;
 
       case "card-toys":
+        card_builder.setTree(parseInt($("#tree-slider .active [data-tree]").attr("data-tree")));
         content_slider.trigger("to.owl.carousel",[2,400,true]);
         steps_bar.to(2);
         break;
@@ -229,3 +383,4 @@ function WindowUpdater(opts){
   self.onEvents();
 }
 
+});

@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
+
 // GENEGAL TAGS
+body{
+  font-family: 'Roboto', sans-serif;
+}
 h1{
   font-size: 48px;
   margin: 0;
@@ -22,7 +27,12 @@ h2{
 h3{
   font-size: 24px;
 }
-
+a{
+  color: @blue;
+  &:hover{
+    color: @blue;
+  }
+}
 ul{
   list-style-type: none;
   margin: 0;
@@ -50,6 +60,7 @@ input[type="text"]{
   background-color: #fff;
   box-shadow: 0px 3px 20.16px 0.84px rgba(33, 33, 33, 0.22);
   line-height: 1;
+  text-align: center;
   &:focus{
     outline: none;
     // box-shadow: none;
@@ -65,11 +76,34 @@ footer{
   }
   &>div{
     display: inline-block;
-    width: 300px;
+    width: 100% / 3;
     vertical-align: top;
   }
   .main-site{
     float: left;
+    text-align: left;
+  }
+  .sound{
+    width: 21px;
+    height: 19px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: -5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    wrap: nowrap;
+    &.active{
+      &>div{
+        // left: -21px;
+        top: -19px;
+      }
+    }
+    &>div{
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      // &:extend(.trall);
+    }
   }
   .socials{
     text-align: center;
@@ -88,15 +122,18 @@ footer{
     text-align: right;
   }
 }
+audio{
+  display: none;
+}
 section{
   height: ~"calc(100vh - 170px)";
   // display: table;
   width: 100%;
   position: relative;
-  
   @media screen and (max-height: @minh){
     height: ~"calc(100vh - 90px)";
   }
+
   .content{
     display: table-cell;
     overflow: auto;
@@ -120,6 +157,9 @@ section{
 .blue{
   color: @blue;
 }
+.green{
+  color: @green;
+}
 
 // GENEGAL CLASSES
 .mid{
@@ -134,24 +174,36 @@ section{
   background-repeat: no-repeat;
 }
 .app-container{
-  // display: -webkit-inline-flex;
-  // display: -moz-inline-flex;
-  // display: -ms-inline-flex;
-  // display: -o-inline-flex;
-  // display: inline-flex;
-
-  // flex-direction: colunm;
-  // flex-wrap: wrap;
-
   height: 100vh;
-  // main,footer{
-  //   width: 100%;
-  // }
-  // main{
-  //   flex-grow: 4;
-  // }
 }
 
+// @keyframes pulse {
+//   from { transform: scale(1); }
+//   to { transform: scale(1.2); }
+// }
+// .preloader{
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   text-align: center;
+//   display: table;
+//   z-index: 9999;
+//   background-color: #fff;
+//   transition: all 1000ms;
+//   transform-origin: center;
+//   animation: pulse 1000ms cubic-bezier(0, 0, 0.26, 0.95) infinite alternate;
+//   &.uppp{
+//     top: -200%;
+//   }
+//   &>div{
+//     display: table-cell;
+//     vertical-align: middle;
+//   }
+// }
+
+//OTHER
 .logo{
   display: inline-block;
   margin: auto;
@@ -209,7 +261,10 @@ section{
   border-radius: 0;
   box-shadow: none;
   outline: none;
-  a:hover+&{
+  // a:hover &{
+  //   text-decoration: none;
+  // }
+  &:hover{
     text-decoration: none;
   }
   &:extend(.trall);

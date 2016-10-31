@@ -4,6 +4,13 @@
     transition: all 500ms;
   }
 }
+#final-card{
+  text-align: center;
+  img{
+    width: auto;
+    margin: auto;
+  }
+}
 .choose-send{
   padding-bottom: 60px;
   .share-block{
@@ -69,11 +76,24 @@
     }
   }
   .finish-him{
+    a:hover{
+      text-decoration: none;
+    }
     .btn{
       display: block;
       margin: auto;
       margin-bottom: 20px;
     }
   }
-  
+  .to-message{
+    position: absolute;
+    left: 40px;
+    top: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: @blue;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 }
