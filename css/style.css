@@ -8,6 +8,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
 html
 {
     font-family: sans-serif;
@@ -3708,62 +3709,6 @@ This must be run when you have at least 2 sprites.
 
 .sprites(@spritesheet-sprites);
 */
-.svg-sprite--tree-2
-{
-    width: 380px;
-    height: 380px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -2px -2px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--tree-2
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--tree-1
-{
-    width: 380px;
-    height: 380px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -384px -2px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--tree-1
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--tree-3
-{
-    width: 380px;
-    height: 380px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -2px -384px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--tree-3
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--tree-4
-{
-    width: 380px;
-    height: 380px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -384px -384px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--tree-4
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
 .svg-sprite--logo
 {
     width: 108px;
@@ -3771,8 +3716,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -2px;
-    background-size: 876px 818px;
+    background-position: -2px -2px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--logo
 {
@@ -3785,472 +3730,10 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -112px;
-    background-size: 876px 818px;
+    background-position: -112px -2px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--fiber
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-13
-{
-    width: 40px;
-    height: 70px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -792px -112px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-13
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-12
-{
-    width: 40px;
-    height: 70px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -834px -112px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-12
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-11
-{
-    width: 40px;
-    height: 70px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -192px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-11
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-10
-{
-    width: 40px;
-    height: 70px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -808px -192px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-10
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-1
-{
-    width: 42px;
-    height: 68px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -263px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-1
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-9
-{
-    width: 40px;
-    height: 67px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -263px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-9
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-8
-{
-    width: 40px;
-    height: 66px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -332px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-8
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-6
-{
-    width: 40px;
-    height: 65px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -808px -332px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-6
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-2
-{
-    width: 42px;
-    height: 63px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -400px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-2
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-5
-{
-    width: 42px;
-    height: 58px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -400px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-5
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-1
-{
-    width: 42px;
-    height: 57px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -464px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-1
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-4
-{
-    width: 42px;
-    height: 54px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -464px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-4
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-4
-{
-    width: 42px;
-    height: 53px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -523px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-4
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-7
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -523px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-7
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-6
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -577px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-6
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-9
-{
-    width: 41px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -577px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-9
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-8
-{
-    width: 41px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -629px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-8
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-10
-{
-    width: 41px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -809px -629px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-10
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-5
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -766px -680px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-5
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-3
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -810px -680px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-3
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--ball-2
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -2px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--ball-2
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-7
-{
-    width: 42px;
-    height: 50px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -46px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-7
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--toy-3
-{
-    width: 42px;
-    height: 47px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -89px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--toy-3
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-2
-{
-    width: 42px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -132px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-2
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-7
-{
-    width: 42px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -175px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-7
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-4
-{
-    width: 42px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -218px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-4
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-5
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -261px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-5
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-3
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -304px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-3
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-8
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -347px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-8
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-6
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -390px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-6
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-1
-{
-    width: 41px;
-    height: 39px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -432px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-1
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-9
-{
-    width: 40px;
-    height: 38px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -475px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-9
-{
-    background-image: url('../img/sprites/svg/svg-sprite.png');
-}
-.svg-sprite--star-10
-{
-    width: 40px;
-    height: 38px;
-
-    background-image: url('../img/sprites/svg/svg-sprite.svg');
-    background-repeat: no-repeat;
-    background-position: -517px -766px;
-    background-size: 876px 818px;
-}
-.no-svg .svg-sprite--star-10
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
@@ -4261,8 +3744,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -559px -766px;
-    background-size: 876px 818px;
+    background-position: -138px -2px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--arrow_right
 {
@@ -4275,8 +3758,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -595px -766px;
-    background-size: 876px 818px;
+    background-position: -138px -38px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--arrow_left
 {
@@ -4289,8 +3772,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -766px -731px;
-    background-size: 876px 818px;
+    background-position: -138px -74px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--inst
 {
@@ -4303,8 +3786,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -793px -731px;
-    background-size: 876px 818px;
+    background-position: -2px -112px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--fb
 {
@@ -4317,8 +3800,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -820px -731px;
-    background-size: 876px 818px;
+    background-position: -29px -112px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--vk
 {
@@ -4331,8 +3814,8 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -847px -731px;
-    background-size: 876px 818px;
+    background-position: -56px -112px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--youtube
 {
@@ -4345,10 +3828,38 @@ This must be run when you have at least 2 sprites.
 
     background-image: url('../img/sprites/svg/svg-sprite.svg');
     background-repeat: no-repeat;
-    background-position: -850px -192px;
-    background-size: 876px 818px;
+    background-position: -112px -82px;
+    background-size: 174px 139px;
 }
 .no-svg .svg-sprite--trash
+{
+    background-image: url('../img/sprites/svg/svg-sprite.png');
+}
+.svg-sprite--sound_off
+{
+    width: 21px;
+    height: 19px;
+
+    background-image: url('../img/sprites/svg/svg-sprite.svg');
+    background-repeat: no-repeat;
+    background-position: -83px -112px;
+    background-size: 174px 139px;
+}
+.no-svg .svg-sprite--sound_off
+{
+    background-image: url('../img/sprites/svg/svg-sprite.png');
+}
+.svg-sprite--sound_on
+{
+    width: 21px;
+    height: 19px;
+
+    background-image: url('../img/sprites/svg/svg-sprite.svg');
+    background-repeat: no-repeat;
+    background-position: -106px -112px;
+    background-size: 174px 139px;
+}
+.no-svg .svg-sprite--sound_on
 {
     background-image: url('../img/sprites/svg/svg-sprite.png');
 }
@@ -4699,6 +4210,10 @@ This must be run when you have at least 2 sprites.
     margin-top: 15px!important;
     margin-left: 15px!important;
 }
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
 h1
 {
     font-size: 48px;
@@ -4732,6 +4247,14 @@ h3
 {
     font-size: 24px;
 }
+a
+{
+    color: #1badc3;
+}
+a:hover
+{
+    color: #1badc3;
+}
 ul
 {
     margin: 0;
@@ -4764,6 +4287,8 @@ input[type='text']
 
     padding: 22px 40px;
 
+    text-align: center;
+
     border: 0;
     border-radius: 0;
     background-color: #fff;
@@ -4790,13 +4315,41 @@ footer > div
 {
     display: inline-block;
 
-    width: 300px;
+    width: 33.33333333%;
 
     vertical-align: top;
 }
 footer .main-site
 {
     float: left;
+
+    text-align: left;
+}
+footer .sound
+{
+    overflow: hidden;
+
+    width: 21px;
+    height: 19px;
+    margin: auto;
+    margin-top: -5px;
+    margin-bottom: 10px;
+
+    cursor: pointer;
+
+    wrap: nowrap;
+}
+footer .sound.active > div
+{
+    top: -19px;
+}
+footer .sound > div
+{
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: top;
 }
 footer .socials
 {
@@ -4821,6 +4374,10 @@ footer .copyright
     float: right;
 
     text-align: right;
+}
+audio
+{
+    display: none;
 }
 section
 {
@@ -4866,6 +4423,10 @@ section #content-slider .owl-item
 {
     color: #1badc3;
 }
+.green
+{
+    color: #61b946;
+}
 .mid
 {
     vertical-align: middle;
@@ -4875,7 +4436,11 @@ footer .socials li,
 .logo,
 .logo .svg-sprite--fiber,
 .btn,
-.btn:after
+.btn:after,
+.choose-toys .card .message,
+.choose-toys .card .card-backs img,
+.choose-toys .card .trash,
+.choose-toys .card-backgrounds label
 {
     -webkit-transition: all 300ms;
             transition: all 300ms;
@@ -4960,7 +4525,7 @@ footer .socials li,
        -moz-appearance: none;
             appearance: none;
 }
-a:hover + .btn
+.btn:hover
 {
     text-decoration: none;
 }
@@ -5147,13 +4712,15 @@ a:hover + .btn
 {
     z-index: 3;
 
+    padding-top: 160px;
+
     background-image: url(../img/images/background.jpg);
 }
 @media screen and (max-height: 800px)
 {
     #front
     {
-        padding-top: 150px;
+        padding-top: 140px;
     }
 }
 #front .descr
@@ -5709,8 +5276,77 @@ a:hover + .btn
 }
 .choose-toys .card
 {
-    width: 40%;
-    max-width: 400px;
+    position: relative;
+
+    overflow: hidden;
+
+    max-width: 380px;
+}
+.choose-toys .card canvas
+{
+    z-index: 1000;
+}
+.choose-toys .card .message
+{
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+
+    width: 380px;
+    height: 380px;
+}
+.choose-toys .card .message.ok
+{
+    left: 380px;
+}
+.choose-toys .card .card-backs
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    width: 380px;
+    height: 380px;
+}
+.choose-toys .card .card-backs img
+{
+    position: absolute;
+    top: 0;
+    left: 380px;
+
+    width: 100%;
+}
+.choose-toys .card .card-backs img.active
+{
+    left: 0;
+}
+.choose-toys .card .trash
+{
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    bottom: 0;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #d83043;
+}
+.choose-toys .card .trash:hover
+{
+    background-color: #b4091d;
+}
+.choose-toys .card .trash div
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
 }
 .choose-toys .items-slider
 {
@@ -5755,6 +5391,36 @@ a:hover + .btn
     left: 0;
 
     margin: auto;
+}
+.choose-toys .card-backgrounds .radioo
+{
+    display: inline-block;
+
+    margin: 0 6px;
+
+    cursor: pointer;
+    vertical-align: top;
+}
+.choose-toys .card-backgrounds label
+{
+    padding: 2px;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+.choose-toys .card-backgrounds input:checked + label
+{
+    border-color: #1badc3;
+}
+.choose-toys .card-backgrounds input
+{
+    display: none;
+}
+.choose-toys .card-backgrounds img
+{
+    width: 40px;
 }
 .choose-message
 {
@@ -5817,6 +5483,8 @@ a:hover + .btn
 }
 .choose-message textarea
 {
+    font-family: 'Bad Script', cursive;
+
     width: 260px;
     height: 107px;
     margin-top: 170px;
@@ -5839,6 +5507,15 @@ a:hover + .btn
 
     -webkit-transition: all 500ms;
             transition: all 500ms;
+}
+#final-card
+{
+    text-align: center;
+}
+#final-card img
+{
+    width: auto;
+    margin: auto;
 }
 .choose-send
 {
@@ -5918,10 +5595,30 @@ a:hover + .btn
 {
     font-size: 12px !important;
 }
+.choose-send .finish-him a:hover
+{
+    text-decoration: none;
+}
 .choose-send .finish-him .btn
 {
     display: block;
 
     margin: auto;
     margin-bottom: 20px;
+}
+.choose-send .to-message
+{
+    font-weight: 700;
+
+    position: absolute;
+    top: 0;
+    left: 40px;
+
+    text-transform: uppercase;
+
+    color: #1badc3;
+}
+.choose-send .to-message:hover
+{
+    text-decoration: underline;
 }
