@@ -41,6 +41,8 @@ var projectPath = {
     build: { // Set build paths
         html: 'build/',
         js: 'build/js/',
+        jsCustom: 'build/js/custom.js',
+        jsVendor: 'build/js/vendor.js',
         jsMainFile: 'main.js',
         css: 'build/css/',
         img: 'build/img/images/',
@@ -69,6 +71,8 @@ var projectPath = {
     watch: { // Set watch paths
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
+        jsCustom: 'src/js/**/custom.js',
+        jsVendor: 'src/js/**/vendor.js',
         style: 'src/styles/**/*.less',
         stylesass: 'src/styles/**/*.saaa',
         img: 'src/img/images/**/*.*',
@@ -133,6 +137,38 @@ gulp.task('js', function () {
             title: 'Total JavaScript'
         }))
         .pipe(gulp.dest(projectPath.build.js))
+        .pipe(reload({stream: true}));
+});
+gulp.task('js-custom',function(){
+    return gulp.src(projectPath.src.jsCustom)
+        .pipe(rigger())
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
+        .pipe(size({title: 'Custom JavaScript'}))
+        .pipe(sourcemaps.init())
+        .pipe(gulp.dest(projectPath.build.js))
+        // .pipe(rename({ suffix: '.min' }))
+        // .pipe(uglify())
+        // .pipe(sourcemaps.write('./'))
+        // .pipe(size({
+        //     title: 'Minified Custom JavaScript'
+        // }))
+        // .pipe(gulp.dest(projectPath.build.js))
+        .pipe(reload({stream: true}));
+});
+gulp.task('js-vendor',function(){
+    return gulp.src(projectPath.src.jsVendor)
+        .pipe(rigger())
+        .pipe(size({title: 'Vendor JavaScript'}))
+        .pipe(sourcemaps.init())
+        .pipe(gulp.dest(projectPath.build.js))
+        // .pipe(rename({ suffix: '.min' }))
+        // .pipe(uglify())
+        // .pipe(sourcemaps.write('./'))
+        // .pipe(size({
+        //     title: 'Minified Custom JavaScript'
+        // }))
+        // .pipe(gulp.dest(projectPath.build.js))
         .pipe(reload({stream: true}));
 });
 
@@ -290,8 +326,14 @@ gulp.task('watch',['webserver'], function(){
     watch([projectPath.watch.html], function(event, cb) {
         gulp.start('html');
     });
-    watch([projectPath.watch.js], function(event, cb) {
-        gulp.start('js');
+    // watch([projectPath.watch.js], function(event, cb) {
+    //     gulp.start('js');
+    // });
+    watch([projectPath.watch.jsCustom], function(event, cb) {
+        gulp.start('js-custom');
+    });
+    watch([projectPath.watch.jsVendor], function(event, cb) {
+        gulp.start('js-vendor');
     });
     watch([projectPath.watch.style], function(event, cb) {
         gulp.start('less');

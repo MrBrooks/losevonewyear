@@ -15,6 +15,10 @@ h1{
     margin-bottom: 20px;
     margin-top: 10px;
   }
+  @media screen and (max-width: @mobile){
+    font-size: 30px;
+    margin-top: 30px;
+  }
 }
 h2,h3{
   color: @blue;
@@ -22,6 +26,10 @@ h2,h3{
 }
 h2{
   font-size: 30px;
+  @media screen and (max-width: @mobile){
+    font-size: 24px;
+    padding: 0 15px;
+  }
   
 }
 h3{
@@ -39,6 +47,11 @@ ul{
   padding: 0;
   li{
     display: inline-block;
+  }
+}
+br{
+  @media screen and (max-width: @mobile){
+    display: none;
   }
 }
 main{
@@ -74,14 +87,27 @@ footer{
   @media screen and (max-height: @minh){
     padding: 20px 40px;
   }
+  @media screen and (max-width: @mobile){
+    padding: 40px 0;
+    text-align: center;
+  }
   &>div{
     display: inline-block;
     width: 100% / 3;
     vertical-align: top;
+    @media screen and (max-height: @minh){
+      width: 100%;
+    }
   }
   .main-site{
     float: left;
     text-align: left;
+    @media screen and (max-width: @mobile){
+      float: none;
+      margin: auto;
+      width: 220px;
+      margin-bottom: 20px;
+    }
   }
   .sound{
     width: 21px;
@@ -92,6 +118,9 @@ footer{
     cursor: pointer;
     margin-bottom: 10px;
     wrap: nowrap;
+    @media screen and (max-width: @mobile){
+      display: none;
+    }
     &.active{
       &>div{
         // left: -21px;
@@ -113,17 +142,38 @@ footer{
       &:extend(.trall);
       &:hover{
         transform: scale(1.2);
+      }
+      @media screen and (max-width: @mobile){
+        transform: scale(1.4);
+        transform-origin: center;
 
       }
+    }
+    @media screen and (max-width: @mobile){
+      margin-bottom: 20px;
+    }
+  }
+  .hashtag{
+    @media screen and (max-width: @mobile){
+      margin-top: 20px;
     }
   }
   .copyright{
     float: right;
     text-align: right;
+    @media screen and (max-width: @mobile){
+      float: none;
+      margin: auto;
+      text-align: center;
+    }
     &>div{
       float: right;
       width: 240px;
       text-align: left;
+      @media screen and (max-height: @minh){
+        text-align: center;
+        width: 100%;
+      }
     }
   }
 }
@@ -138,10 +188,16 @@ section{
   @media screen and (max-height: @minh){
     height: ~"calc(100vh - 90px)";
   }
+  @media screen and (max-height: @minminh){
+    height: auto;
+  }
 
   .content{
     display: table-cell;
     overflow: auto;
+    @media screen and (max-width: @mobile){
+      display: block;
+    }
   }
   #content-slider{
     height: 100%;
@@ -410,6 +466,22 @@ section{
   }
 }
 
+
+.tree-mobile{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 143px;
+  width: 100%;
+  background-image: url(../img/images/tree_mobile.png);
+  background-position: 50% 0;
+}
+.only-mobile{
+  display: none;
+  @media screen and (max-width: @mobile){
+    display: block;
+  }
+}
 .hidden-container{
   display: none;
 }
