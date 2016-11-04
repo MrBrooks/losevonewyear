@@ -3,7 +3,7 @@
   <a href=""><button class="btn btn--normal">Основной сайт</button></a>
   </div>
   <div class="socials">
-    <div id="sound-btn" class="sound">
+    <div id="sound-btn" class="sound active">
       <div class="soundon">
         <div class="svg-sprite--sound_off"></div>
         <div class="svg-sprite--sound_on"></div>
@@ -19,12 +19,17 @@
     <div class="hashtag green">#вместесЛосево</div>
   </div>
   <div class="copyright">
-    <div>© Группа компаний «Лосево»  2016</div>
-    <div><a href="http://mbrooks.ru">© Website developed by Mr. Brooks</a></div>
+    <div>
+      <div>© Группа компаний «Лосево»  2016</div>
+      <div><a href="http://mbrooks.ru">© Website developed by Mr. Brooks</a></div>
+    </div>
   </div>
-  <audio id="music" autoplay loop>
+  <audio id="music" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+  <div class="hidden-container">
+  <canvas id="canvas-message" width="380" height="380"></canvas>
+  </div>
 </footer>
 
 <!-- JavaScript-->
