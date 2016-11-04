@@ -81,8 +81,10 @@
         top: 0;
         width: 100%;
         &:extend(.trall);
+        transition-delay: 500ms;
         &.active{
           left: 0;
+          transition-delay: 0ms;
         }
       }
     }
@@ -112,6 +114,7 @@
     width: 240px;
     position: relative;
     text-align: center;
+    height: 30px;
     .pic{
       width: 30px;
       height: 30px;
