@@ -4224,7 +4224,7 @@ h1
     margin-bottom: 35px;
     margin-bottom: 20px;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     h1
     {
@@ -4329,7 +4329,7 @@ footer
 
     text-align: center;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     footer
     {
@@ -4353,7 +4353,7 @@ footer > div
 
     vertical-align: top;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-width: 767px)
 {
     footer > div
     {
@@ -4479,7 +4479,7 @@ footer .copyright > div
 
     text-align: left;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     footer .copyright > div
     {
@@ -4499,14 +4499,14 @@ section
     width: 100%;
     height: calc(100vh - 170px);
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     section
     {
         height: calc(100vh - 90px);
     }
 }
-@media screen and (max-height: 730px)
+@media screen and (max-height: 800px)
 {
     section
     {
@@ -4725,7 +4725,7 @@ footer .socials li,
 {
     margin-top: 120px;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     .card-start .steps
     {
@@ -4874,11 +4874,11 @@ footer .socials li,
 {
     background-attachment: fixed;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     #front
     {
-        padding-top: 140px;
+        padding-top: 150px;
     }
 }
 #front .descr
@@ -5373,7 +5373,7 @@ footer .socials li,
     width: 300px;
     margin: auto;
 }
-@media screen and (max-height: 800px)
+@media screen and (max-height: 900px)
 {
     #tree-slider
     {
@@ -5397,6 +5397,8 @@ footer .socials li,
 .choose-toys
 {
     padding: 40px 40px 0;
+
+    text-align: center;
 }
 .choose-toys:after
 {
@@ -5802,13 +5804,17 @@ footer .socials li,
 {
     font-size: 12px !important;
 }
+.choose-send .finish-him
+{
+    margin-top: 30px;
+}
 .choose-send .finish-him a:hover
 {
     text-decoration: none;
 }
 .choose-send .finish-him .btn
 {
-    display: block;
+    display: inline-block;
 
     margin: auto;
     margin-bottom: 20px;
@@ -5828,4 +5834,83 @@ footer .socials li,
 .choose-send .to-message:hover
 {
     text-decoration: underline;
+}
+.tabs .pagination
+{
+    display: -webkit-inline-flex;
+    display:    -moz-inline-flex;
+    display:     -ms-inline-flex;
+    display:      -o-inline-flex;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display:         inline-flex;
+
+    width: 100%;
+    margin-top: 50px;
+
+    box-shadow: 0 7px 8.37px .63px rgba(33, 33, 33, .16);
+}
+.tabs .tab-content
+{
+    display: none;
+}
+.tabs .item
+{
+    font-weight: 700;
+    line-height: 1;
+
+    position: relative;
+
+    width: 33.33333333%;
+    padding: 36px 0;
+
+    cursor: pointer;
+    -webkit-transition: all 250ms;
+            transition: all 250ms;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: white;
+    background-color: #61b946;
+}
+.tabs .item:after
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+    margin: auto;
+
+    content: '';
+    -webkit-transition: all 300ms;
+            transition: all 300ms;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+
+    opacity: 0;
+    background-color: #349f13;
+}
+.tabs .item:hover
+{
+    background-color: #349f13;
+}
+.tabs .item.active
+{
+    color: white;
+    background-color: #349f13;
+}
+.tabs .item.active:after
+{
+    bottom: -10px;
+
+    opacity: 1;
 }

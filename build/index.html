@@ -186,6 +186,22 @@
     </div>
     <div class="content mid choose-toys">
       <div data-nav="card-tree" class="navigation blue to-tree">К выбору ёлки</div>
+      <div id="card-builder" class="card">
+        <div class="message">
+          <button class="btn btn--normal">Хорошо</button>
+          <img src="img/svg/onboarding.svg" alt="">
+        </div>
+        <canvas id="canvas" width="380" height="380"></canvas>
+        <div class="card-backs">
+          <img class="active" src="img/svg/back-full-1.svg" alt="" data-index="1">
+          <img src="img/svg/back-full-2.svg" alt="" data-index="2">
+          <img src="img/svg/back-full-3.svg" alt="" data-index="3">
+          <img src="img/svg/back-full-4.svg" alt="" data-index="4">
+        </div>
+        <div class="trash">
+          <div class="svg-sprite--trash"></div>
+        </div>
+      </div>
       <div class="controls">
         <div class="selector">
           <div class="label">Шарики</div>
@@ -250,10 +266,10 @@
             </div>
           </div>
         </div>
-        <span class="clear-all green">Удалить все</span>
+        <span id="clear-toys" class="clear-all green">Удалить все</span>
         <button data-nav="card-message" class="btn btn--green navigation">Готово</button>
       </div>
-      <div id="card-builder" class="card">
+      <!-- <div id="card-builder" class="card">
         <div class="message">
           <button class="btn btn--normal">Хорошо</button>
           <img src="img/svg/onboarding.svg" alt="">
@@ -268,7 +284,7 @@
         <div class="trash">
           <div class="svg-sprite--trash"></div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="content mid choose-message">
       <div class="navigation to-toys" data-nav="card-toys">К оформлению ёлки</div>
@@ -290,51 +306,68 @@
         <div id="svg-card"></div>
         <div id="svg-message"></div>
       </div>
-      <div class="share-block">
-        <h3>Отправить сообщением  в социальной сети:</h3>
-        <div class="descr">Скопируйте ссылку и отправьте на стену друга или в личном сообщение Вконтакте, Facebook или Одноклассники:</div>
-        <input type="text" id="url-to-card" value="http://losevo2017.ru/jJD12nkjn4123nkjn412j4nkj4j2nk1j">
-        <button id="copy-message-btn" data-clipboard-target="#url-to-card" class="btn btn--green copy-link">Скопировать ссылку</button>
-      </div>
-      <div class="email-block">
-        <h3>Отправить на электронную почту:</h3>
-        <input name="email" type="text" data-type="email" placeholder="E-mail получателя">
-        <div class="capcha">тут будет капча</div>
-        <button class="btn btn--green send-email">Отправить</button>
-      </div>
-      <div class="mail-block">
-        <h3>Отправить почтой:</h3>
-        <div class="descr">
-          <p>Да, именно! Мы отправим вашу открытку почтой. Отправляем мы открытки только по России.</p>
-          <p>Акция действует на первые 1000 открыток до 8 декабря. Уже отправлено <span class="magenta">345</span> открыток.</p>
+      <div class="tabs">
+        <div class="pagination">
+          <div class="item" data-index="1">Отправить личным сообщением</div>
+          <div class="item" data-index="2">Отправить на электронную почту</div>
+          <div class="item" data-index="3">Отправить по почте</div>
         </div>
-        <div class="mail-data">
-          <div class="names">
-            <input type="text" name="name-from" placeholder="*От кого">
-            <input type="text" name="name-to" placeholder="*Кому">
+        <div class="tab-contents">
+          <div class="tab-content" data-index="1">
+            <div class="share-block">
+              <h3>Отправить сообщением  в социальной сети:</h3>
+              <div class="descr">Скопируйте ссылку и отправьте на стену друга или в личном сообщение Вконтакте, Facebook или Одноклассники:</div>
+              <input type="text" id="url-to-card" value="http://losevo2017.ru/jJD12nkjn4123nkjn412j4nkj4j2nk1j">
+              <button id="copy-message-btn" data-clipboard-target="#url-to-card" class="btn btn--green copy-link">Скопировать ссылку</button>
+            </div>
           </div>
-          <div class="address">
-            <input type="text" name="index" placeholder="*Индекс">
-            <input type="text" name="city" placeholder="*Город">
-            <input type="text" name="address" placeholder="*Адрес">
+          <div class="tab-content" data-index="2">
+            <div class="email-block">
+              <h3>Отправить на электронную почту:</h3>
+              <input name="email" type="text" data-type="email" placeholder="E-mail получателя">
+              <div class="capcha">тут будет капча</div>
+              <button class="btn btn--green send-email">Отправить</button>
+            </div>
           </div>
-        </div>
-        <div class="index-link"><a href="">Узнать индекс</a></div>
-        <div class="agreement">
-          <div class="descr">
-            * Поля, отмеченные звёздочкой, заполнить необходимо. Иначе открытка не достигнет адресата.
+          <div class="tab-content" data-index="3">
+            <div class="mail-block">
+              <h3>Отправить почтой:</h3>
+              <div class="descr">
+                <p>Да, именно! Мы отправим вашу открытку почтой. Отправляем мы открытки только по России.</p>
+                <p>Акция действует на первые 1000 открыток до 8 декабря. Уже отправлено <span class="magenta">345</span> открыток.</p>
+              </div>
+              <div class="mail-data">
+                <div class="names">
+                  <input type="text" name="name-from" placeholder="*От кого">
+                  <input type="text" name="name-to" placeholder="*Кому">
+                </div>
+                <div class="address">
+                  <input type="text" name="index" placeholder="*Индекс">
+                  <input type="text" name="city" placeholder="*Город">
+                  <input type="text" name="address" placeholder="*Адрес">
+                </div>
+              </div>
+              <div class="index-link"><a href="">Узнать индекс</a></div>
+              <div class="agreement">
+                <div class="descr">
+                  * Поля, отмеченные звёздочкой, заполнить необходимо. Иначе открытка не достигнет адресата.
+                </div>
+                <!-- <div class="checkbox"></div> -->
+              </div>
+              <div class="send-by-post">
+                <div class="capcha">тут будет капча</div>
+                <button type="submit" class="btn btn--green">Отправить</button>
+              </div>
+            </div>
           </div>
-          <!-- <div class="checkbox"></div> -->
-        </div>
-        <div class="send-by-post">
-          <div class="capcha">тут будет капча</div>
-          <button type="submit" class="btn btn--green">Отправить</button>
         </div>
       </div>
+
       <div class="finish-him">
         <a href=""><button class="btn btn--blue">Сохранить на компьютер</button></a>
         <button class="btn btn--green">Создать ещё открытку</button>
       </div>
+
     </div>
   </div>
   <div class="backgrounds" id="scene">

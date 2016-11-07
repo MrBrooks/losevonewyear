@@ -24,6 +24,11 @@ $(document).ready(function() {
   var message_builder = new MessageBuilder();
   var svg_card, svg_message;
 
+  var tabs = new Tabs({
+    btns: ".pagination .item",
+    tabs: ".tab-content"
+  });
+
   
 
 
@@ -186,7 +191,7 @@ function MessageBuilder(){
 
 function CardBuilder(){
   var elements, background_btns, card_builder, message, message_close_btn, backgrounds, canvas, tree_id, tree,
-    background_index;
+    background_index, toy_layer, remove_btn;
 
   this.setTree = function(id){
     if(!tree || (tree_id !== id)){
@@ -223,19 +228,31 @@ function CardBuilder(){
       el.moveTo(0);
     });
   };
+  function removeToys(){
+    toy_layer.forEachObject(function(elem){
+      elem.remove();
+    });
+  };
 
   function init(){
     elements = $(".selector .pic");
     background_btns = $(".selector label");
     card_builder = $("#card-builder");
     backgrounds = card_builder.find(".card-backs img");
+    remove_btn = $("#clear-toys");
     message = card_builder.find(".message");
     message_close_btn = card_builder.find(".btn");
-    canvas = new fabric.Canvas('canvas');
+    if(document.getElementById('canvas')){
+      canvas = new fabric.Canvas('canvas');
+      toy_layer = new fabric.Group();
+    }
     tree_id = 1;
     background_index = 1;
 
     //events
+    remove_btn.on('click',function(){
+      removeToys();
+    });
     elements.on("click", function(e){
 
       console.log("elements on double click");
@@ -269,7 +286,9 @@ function CardBuilder(){
         el.cornerColor = 'rgba(255,255,255,0.7)';
         el.cornerStrokeColor = 'rgba(255,255,255,0.7)';
         el.strokeWidth = 3;
+        toy_layer.add(el);
         canvas.add(el);
+        
         el.center();
         el.setCoords();
         el.bringToFront();
@@ -339,7 +358,7 @@ function Navigation(){
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    autoHeight: true
+    // autoHeight: true
   });
 
   var steps_bar = new StepsBar();
@@ -476,3 +495,29 @@ function WindowUpdater(opts){
 }
 
 });
+
+function Tabs(options){
+  var defs = {
+    btns: ".tab-btn",
+    tabs: ".tab-content",
+    effect: "class"
+  };
+  var opts = $.extend(defs, options);
+
+  var btns, tabs, group;
+
+  function init(){
+    btns = $(opts.btns);
+    tabs = $(opts.tabs);
+
+    btns.on('click',onClick);
+  }
+
+  function onClick(){
+      btns.removeClass('active');
+      tabs.slideUp(300);
+      var index = parseInt($(this).addClass('active').attr('data-index'));
+      $(tabs.get(index-1)).slideDown(300);
+  }
+  init();
+}
