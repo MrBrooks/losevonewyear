@@ -4251,6 +4251,8 @@ h3
 h2
 {
     font-size: 30px;
+
+    margin-top: 0;
 }
 @media screen and (max-width: 767px)
 {
@@ -4516,7 +4518,8 @@ section
 section .content
 {
     display: table-cell;
-    overflow: auto;
+
+    padding-bottom: 30px;
 }
 @media screen and (max-width: 767px)
 {
@@ -5394,6 +5397,10 @@ footer .socials li,
 {
     margin: 0;
 }
+.choose-tree .btn
+{
+    margin-top: 40px;
+}
 .choose-toys
 {
     padding: 40px 40px 0;
@@ -5416,6 +5423,7 @@ footer .socials li,
     left: 40px;
 
     cursor: pointer;
+    text-align: left;
     text-transform: uppercase;
 }
 .choose-toys .to-tree:hover
@@ -5460,13 +5468,6 @@ footer .socials li,
 
     text-align: center;
     vertical-align: middle;
-}
-.choose-toys .controls,
-.choose-toys .card
-{
-    float: left;
-
-    width: 60%;
 }
 .choose-toys .card
 {
@@ -5623,9 +5624,26 @@ footer .socials li,
 {
     width: 40px;
 }
+.dif
+{
+    display: -webkit-inline-flex;
+    display:    -moz-inline-flex;
+    display:     -ms-inline-flex;
+    display:      -o-inline-flex;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display:         inline-flex;
+
+    width: 100%;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
 .choose-message
 {
-    padding: 0 40px;
+    padding: 50px 40px 0;
 }
 .choose-message:after
 {
@@ -5645,7 +5663,9 @@ footer .socials li,
 {
     font-weight: 700;
 
-    width: 16.66666667%;
+    position: absolute;
+    top: 0;
+    left: 40px;
 
     cursor: pointer;
     text-align: left;
@@ -5659,10 +5679,12 @@ footer .socials li,
 }
 .choose-message .card-message
 {
-    width: 41.66666667%;
+    width: 50%;
 }
 .choose-message .card-message > div
 {
+    float: right;
+
     width: 380px;
     height: 380px;
 
@@ -5671,7 +5693,7 @@ footer .socials li,
 }
 .choose-message .card-message-description
 {
-    width: 41.66666667%;
+    width: 50%;
     padding: 0 20px;
 }
 .choose-message .card-message-description h2
@@ -5816,8 +5838,7 @@ footer .socials li,
 {
     display: inline-block;
 
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 0 10px 20px;
 }
 .choose-send .to-message
 {
