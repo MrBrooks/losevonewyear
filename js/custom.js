@@ -191,7 +191,7 @@ function MessageBuilder(){
 
 function CardBuilder(){
   var elements, background_btns, card_builder, message, message_close_btn, backgrounds, canvas, tree_id, tree,
-    background_index, toy_layer, remove_btn;
+    background_index, toy_layer, remove_btn, background;
 
   this.setTree = function(id){
     if(!tree || (tree_id !== id)){
@@ -218,7 +218,9 @@ function CardBuilder(){
     });
   };
   this.unsetBackground = function(){
-    canvas.backgroundImage = null;
+    if(background){
+      background.remove();
+    }
   };
   this.setBackground = function(){
     fabric.Image.fromURL('img/svg/back-full-'+background_index+'.svg',function(el){
@@ -226,6 +228,7 @@ function CardBuilder(){
       el.height = 380;
       canvas.add(el);
       el.moveTo(0);
+      background = el;
     });
   };
   function removeToys(){
