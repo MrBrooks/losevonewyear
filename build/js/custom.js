@@ -136,8 +136,8 @@ function CardData(){
     onDragged: test_callback,
   });
 
-  function test_callback(e){
-    console.log(e);
+  function test_callback(){
+    // console.log(e);
   }
   
   // tree_slider.on("",function());
@@ -157,8 +157,8 @@ function MessageBuilder(){
   function init(){
     canvas = new fabric.Canvas('canvas-message');
     message = $("#text-message");
-    fabric.Image.fromURL('img/svg/happy_new_year.svg', function(el){
-      background = el;
+    fabric.loadSVGFromURL('img/svg/happy_new_year.svg', function(els,opts){
+      background = fabric.util.groupSVGElements(els,opts);
       background.width = 380;
       background.height = 380;
       background.selectable  = false;
@@ -196,19 +196,18 @@ function CardBuilder(){
   this.setTree = function(id){
     if(!tree || (tree_id !== id)){
       tree_id = id;
-      fabric.Image.fromURL("img/svg/tree-"+tree_id+".svg", function(el){
+      fabric.loadSVGFromURL("img/svg/tree-"+tree_id+".svg", function(els, opts){
         if(tree){
           tree.remove();
         }
-        el.selectable  = false;
-        el.scaleToHeight(380);
-        el.hoverCursor = "auto";
-        canvas.add(el);
-        el.center();
-        el.setCoords();
-        el.moveTo(0);
-        tree = el;
-
+        tree = fabric.util.groupSVGElements(els,opts);
+        tree.set({
+          selectable : false,
+          hoverCursor: "auto"
+        });
+        canvas.add(tree);
+        tree.center().setCoords().moveTo(1);
+        tree.deletable = false;
       });
     }
   };
@@ -218,24 +217,36 @@ function CardBuilder(){
     });
   };
   this.unsetBackground = function(){
+    console.log(canvas.getObjects());
     if(background){
-      background.remove();
+      canvas.remove(background);
+      canvas.renderAll();
     }
+    console.log(canvas.getObjects());
   };
   this.setBackground = function(){
-    fabric.Image.fromURL('img/svg/back-full-'+background_index+'.svg',function(el){
-      el.width = 380;
-      el.height = 380;
-      canvas.add(el);
-      el.moveTo(0);
-      background = el;
+    fabric.loadSVGFromURL('img/svg/back-full-'+background_index+'.svg',function(els,opts){
+      if(background){
+        canvas.remove(background);
+      }
+      background = fabric.util.groupSVGElements(els,opts);
+      background.set({
+        width: 380,
+        height: 380,
+        selectable: false,
+        hoverCursor: "auto",
+      });
+      canvas.add(background);
+      background.moveTo(0);
     });
   };
   function removeToys(){
-    toy_layer.forEachObject(function(elem){
-      elem.remove();
-    });
-  };
+    var all = canvas.getObjects();
+    var count = all.length;
+    for(var i = 1; i < count; i++){ //remove all exept tree - always on canvas with index 0
+      canvas.remove(all[1]);        //all[] dynamicaly update after remove() operation
+    }
+  }
 
   function init(){
     elements = $(".selector .pic");
@@ -274,31 +285,29 @@ function CardBuilder(){
         default: throw Error("Unexpected element data-type in CardBuilder init()");
       }
       var path = "img/svg/";
-      fabric.Image.fromURL(path+type+"-"+index+".svg", function(el){
+      fabric.loadSVGFromURL(path+type+"-"+index+".svg", function(els, opts){
+        el = fabric.util.groupSVGElements(els,opts);
+        el.set({
+          lockRotation : true,
+          hasRotatingPoint : false,
+          lockScalingFlip : true,
+          lockSkewingX : true,
+          lockSkewingY : true,
+          lockUniScaling : true,
+          borderColor : 'white',
+          transparentCorners  : false,
+          cornerStyle : 'circle',
+          cornerSize : 15,
+          cornerColor : 'rgba(255,255,255,0.7)',
+          cornerStrokeColor : 'rgba(255,255,255,0.7)',
+          strokeWidth : 3,
+          deletable : true,
+        });
         el.scaleToWidth(40);
-        el.lockRotation = true;
-        el.hasRotatingPoint = false;
-        el.lockScalingFlip = true;
-        el.lockSkewingX = true;
-        el.lockSkewingY = true;
-        el.lockUniScaling = true;
-        el.borderColor = 'white';
-        el.transparentCorners  = false;
-        el.cornerStyle = 'circle';
-        el.cornerSize = 15;
-        el.cornerColor = 'rgba(255,255,255,0.7)';
-        el.cornerStrokeColor = 'rgba(255,255,255,0.7)';
-        el.strokeWidth = 3;
-        toy_layer.add(el);
+        
         canvas.add(el);
         
-        el.center();
-        el.setCoords();
-        el.bringToFront();
-        // console.log(el.getCenterPoint());
-        // el.on("selected",function(e){
-        //   console.log("selected");
-        // });
+        el.center().setCoords().bringToFront();
         el.on("moving",function(e){
           var center = this.getCenterPoint();
           if( center.x >= 320 && center.y >= 320){
@@ -392,20 +401,23 @@ function Navigation(){
         break;
 
       case "card-toys":
-        card_builder.setTree(parseInt($("#tree-slider .active [data-tree]").attr("data-tree")));
         card_builder.unsetBackground();
+        card_builder.setTree(parseInt($("#tree-slider .active [data-tree]").attr("data-tree")));
         content_slider.trigger("to.owl.carousel",[2,400,true]);
         steps_bar.to(2);
+
         break;
 
       case "card-message":
         card_builder.setBackground();
+        
         content_slider.trigger("to.owl.carousel",[3,400,true]);
         steps_bar.to(3);
         $("body").removeClass("send-page");
         break;
 
       case "card-send":
+        
         svg_message = message_builder.toSVG();
         svg_card = card_builder.toSVG();
         $("#svg-card").html(svg_card);
