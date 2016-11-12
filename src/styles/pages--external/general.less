@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
+// @import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
 
 // GENEGAL TAGS
 body{
@@ -199,11 +199,25 @@ section{
     padding-bottom: 30px;
     @media screen and (max-width: @mobile){
       display: block;
+
     }
   }
   #content-slider{
     height: 100%;
     z-index: 3;
+    max-height: 600px;
+    overflow: hidden;
+    .send-page &{
+      max-height: none;
+      overflow: auto;
+    }
+    .card-toys-page &{
+      max-height: 880px;
+    }
+    .card-message-page &{
+      max-height: 680px;
+      // overflow: auto;
+    }
     .owl-stage-outer,.owl-stage{
       height: 100%;
     }
@@ -477,11 +491,20 @@ section{
   width: 100%;
   background-image: url(../img/images/tree_mobile.png);
   background-position: 50% 0;
+  transition: all 500ms;
+  .card-start &{
+    top: -143px;
+  }
 }
 .only-mobile{
   display: none;
   @media screen and (max-width: @mobile){
     display: block;
+  }
+}
+.only-desktop{
+  @media screen and (max-width: @mobile){
+    display: none;
   }
 }
 .hidden-container{

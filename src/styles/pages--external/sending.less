@@ -7,22 +7,37 @@
 #final-card{
   text-align: center;
   font-size: 0;
+  
   &>div{
     display: inline-block;
     vertical-align: top;
+    width: 380px;
+    height: 380px;
+    @media screen and (max-width: @mobile){
+      width: 320px;
+      height: 320px;
+    }
   }
-  img{
-    width: auto;
-    margin: auto;
+  svg{
+    width: 100%;
+    height: 100%;
   }
 }
 .choose-send{
   padding-bottom: 60px;
+  h2{
+    padding-top: 20px;
+  }
   .share-block{
     margin-bottom: 80px;
     input{
       margin-right: 20px;
       width: 380px;
+      @media screen and (max-width: @mobile){
+        width: 300px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
     }
   }
   .email-block{
@@ -39,6 +54,9 @@
     margin: auto;
     margin-bottom: 40px;
     width: 640px;
+    @media screen and (max-width: @mobile){
+      width: 100%;
+    }
     .mail-data{
       &:after{
         content: '';
@@ -47,20 +65,38 @@
       }
       input{
         float: left;
+        @media screen and (max-width: @mobile){
+          margin-bottom: 10px;
+          float: none;
+          display: block;
+          margin: auto;
+        }
       }
     }
     .names{
       input{
         width: 300px;
         margin: 10px;
+        @media screen and (max-width: @mobile){
+          margin-left: auto;
+          margin-right: auto;
+          
+        }
       }
     }
     .address{
       input{
         width: 140px;
         margin: 10px;
+        @media screen and (max-width: @mobile){
+          width: 300px;
+          margin-left: auto;
+          margin-right: auto;
+        }
         &:last-child{
           width: 300px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
     }
@@ -113,9 +149,17 @@
     width: 100%;
     box-shadow: 0px 7px 8.37px 0.63px rgba(33, 33, 33, 0.16);
     margin-top: 50px;
+    flex-wrap: wrap;
+    @media screen and (max-width: @mobile){
+      box-shadow: none;
+    }
   }
   .tab-content{
     display: none;
+    @media screen and (max-width: @mobile){
+      width: 100%;
+      padding: 0 10px;
+    }
   }
   .item{
     width: 100% /3;
@@ -129,6 +173,10 @@
     transition: all 250ms;
     line-height: 1;
     position: relative;
+    @media screen and (max-width: @mobile){
+      width: 100%;
+      margin-bottom: 10px;
+    }
     &:after{
       @size: 30px;
       content: '';
@@ -152,6 +200,9 @@
     &.active{
       background-color: @green-dark;
       color: white;
+      @media screen and (max-width: @mobile){
+        order: 10;
+      }
       &:after{
         bottom: -10px;
         opacity: 1;
@@ -160,3 +211,97 @@
   }
 }
 
+.contest-block{
+  margin-top: 20px;
+  background-color: #61bb46;
+  color: white;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  // temp
+  
+  &>div{
+    width: 25%;
+    min-height: 1px;
+    @media screen and (max-width: @mobile){
+      display: none;
+    }
+  }
+  .label{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .left{
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(../img/svg/bg-right.svg);
+  }
+  .right{
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(../img/svg/bg-left.svg);
+  }
+  .center{
+    width: 50%;
+    text-align: center;
+    padding-bottom: 50px;
+    @media screen and (max-width: @mobile){
+      width: 100%;
+      display: block;
+    }
+  }
+  .context-logo{
+    padding: 60px 0 30px;
+    text-align: center;
+    &>div{
+      margin: auto;
+    }
+  }
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.items-width(@amount){
+  width: 100%/@amount;
+  @media screen and (max-width: @mobile){
+    width: 100%;
+  }
+}
+
+.grid-with-label{
+  text-align: center;
+  margin-bottom: 40px;
+  .items{
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    justify-content: center;
+    @media screen and (max-width: @mobile){
+      flex-wrap: wrap;
+    }
+  }
+  .items-2 .item{
+    .items-width(2);
+  }
+  .items-3 .item{
+    .items-width(3);
+  }
+  .item{
+    flex-grow: 1;
+    padding: 10px;
+    @media screen and (max-width: @mobile){
+      margin-bottom: 20px;
+    }
+  }
+  .it-img div{
+    margin: auto;
+    margin-bottom: 15px;
+  }
+}

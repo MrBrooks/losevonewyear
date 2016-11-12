@@ -43,7 +43,7 @@
             <button class="btn btn--normal">Закрыть</button>
             <img src="img/svg/onboarding.svg" alt="">
           </div>
-          <canvas id="canvas" width="380" height="380"></canvas>
+          <canvas id="canvas"></canvas>
           <div class="card-backs">
             <img class="active" src="img/svg/back-full-1.svg" alt="" data-index="1">
             <img src="img/svg/back-full-2.svg" alt="" data-index="2">
@@ -54,7 +54,7 @@
             <div class="svg-sprite--trash"></div>
           </div>
         </div>
-        <div class="controls">
+        <div class="controls only-desktop">
           <div class="selector">
             <div class="label">Шарики</div>
             <div id="ball-slider" class="items-slider">
@@ -119,6 +119,65 @@
           <span id="clear-toys" class="clear-all green">Удалить все</span>
           <button data-nav="card-message" class="btn btn--green navigation">Готово</button>
         </div>
+        <div class="mobile-controls only-mobile">
+          <div class="mobile-toy-tabs tabs">
+            <div class="pagination">
+              <div class="item" data-index="1"><img src="img/svg/ball-1.svg" alt=""></div>
+              <div class="item" data-index="2"><img src="img/svg/toy-10.svg" alt=""></div>
+              <div class="item" data-index="3"><img src="img/svg/star-1.svg" alt=""></div>
+              <div class="item" data-index="4"><img src="img/svg/back-1.svg" alt=""></div>
+            </div>
+            <div class="toy-tabs-contents">
+              <div class="tab-content" data-index="1">
+                <div class="pic" data-type="ball" data-index="1"><img src="img/svg/ball-1.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="2"><img src="img/svg/ball-2.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="3"><img src="img/svg/ball-3.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="4"><img src="img/svg/ball-4.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="5"><img src="img/svg/ball-5.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="6"><img src="img/svg/ball-6.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="7"><img src="img/svg/ball-7.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="8"><img src="img/svg/ball-8.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="9"><img src="img/svg/ball-9.svg" alt=""></div>
+                <div class="pic" data-type="ball" data-index="10"><img src="img/svg/ball-10.svg" alt=""></div>
+              </div>
+              <div class="tab-content" data-index="2">
+                <div class="pic" data-type="toy" data-index="10"><img src="img/svg/toy-10.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="11"><img src="img/svg/toy-11.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="12"><img src="img/svg/toy-12.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="13"><img src="img/svg/toy-13.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="1"><img src="img/svg/toy-1.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="2"><img src="img/svg/toy-2.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="3"><img src="img/svg/toy-3.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="4"><img src="img/svg/toy-4.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="5"><img src="img/svg/toy-5.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="6"><img src="img/svg/toy-6.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="7"><img src="img/svg/toy-7.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="8"><img src="img/svg/toy-8.svg" alt=""></div>
+                <div class="pic" data-type="toy" data-index="9"><img src="img/svg/toy-9.svg" alt=""></div>
+              </div>
+              <div class="tab-content" data-index="3">
+                <div class="pic" data-type="star" data-index="1"><img src="img/svg/star-1.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="2"><img src="img/svg/star-2.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="3"><img src="img/svg/star-3.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="4"><img src="img/svg/star-4.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="5"><img src="img/svg/star-5.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="6"><img src="img/svg/star-6.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="7"><img src="img/svg/star-7.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="8"><img src="img/svg/star-8.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="9"><img src="img/svg/star-9.svg" alt=""></div>
+                <div class="pic" data-type="star" data-index="10"><img src="img/svg/star-10.svg" alt=""></div>
+              </div>
+              <div class="tab-content card-backgrounds" data-index="4">
+                <div class="radioo"><input name="m-background" value="1" type="radio" id="m-back-1" checked><label for="m-back-1" data-index="1"><img src="img/svg/back-1.svg" alt=""></label></div>
+                <div class="radioo"><input name="m-background" value="2" type="radio" id="m-back-2" ><label for="m-back-2" data-index="2"><img src="img/svg/back-2.svg" alt=""></label></div>
+                <div class="radioo"><input name="m-background" value="3" type="radio" id="m-back-3"><label for="m-back-3" data-index="3"><img src="img/svg/back-3.svg" alt=""></label></div>
+                <div class="radioo"><input name="m-background" value="4" type="radio" id="m-back-4"><label for="m-back-4" data-index="4"><img src="img/svg/back-4.svg" alt=""></label></div>
+              </div>
+            </div>
+          </div>
+          <span class="clear-all green">Удалить все</span>
+          <button data-nav="card-message" class="btn btn--green navigation">Готово</button>
+        </div>
       </div>
     </div>
     <div class="content mid choose-message">
@@ -168,8 +227,8 @@
             <div class="mail-block">
               <h3>Отправить почтой:</h3>
               <div class="descr">
-                <p>Да, именно! Мы отправим вашу открытку почтой. Отправляем мы открытки только по России.</p>
-                <p>Акция действует на первые 1000 открыток до 8 декабря. Уже отправлено <span class="magenta">345</span> открыток.</p>
+                <p>Первую 1000 открыток мы отправим почтой России.</p>
+                <p>Уже отправлено <span class="magenta"><b>345</b></span> открыток.</p>
               </div>
               <div class="mail-data">
                 <div class="names">
@@ -203,6 +262,59 @@
         <button class="btn btn--green">Создать ещё открытку</button>
       </div>
 
+      <div class="contest-block">
+        <div class="left">
+        </div>
+        <div class="center">
+          <div class="context-logo">
+            <div class="context-svg-sprite--text only-desktop"></div>
+            <div class="context-svg-sprite--text_mob only-mobile"></div>
+          </div>
+          <div class="grid-with-label">
+            <div class="label">Мы дарим</div>
+            <div class="items items-2">
+              <div class="item">
+                <div class="it-img">
+                  <div class="context-svg-sprite--poket"></div>
+                </div>
+                <div class="it-descr">рецепт и набор продуктов каждую неделю с помощью генератора случайных чисел</div>
+              </div>
+              <div class="item">
+                <div class="it-img">
+                  <div class="context-svg-sprite--korzina"></div>
+                </div>
+                <div class="it-descr"> в последние дни декабря дружная команда «Лосево» вручит супер приз - корзину продуктов</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-with-label">
+            <div class="label">Что нужно делать:</div>
+            <div class="items items-3">
+              <div class="item">
+                <div class="it-img">
+                  <div class="context-svg-sprite--ins"></div>
+                </div>
+                <div class="it-descr">Выложи открытку в аккаунте Инстаграм с <b>#вместесЛосево2017</b></div>
+              </div>
+              <div class="item">
+                <div class="it-img">
+                  <div class="context-svg-sprite--pen"></div>
+                </div>
+                <div class="it-descr">Подпишись на <b>@shplosevo</b></div>
+              </div>
+              <div class="item">
+                <div class="it-img">
+                  <div class="context-svg-sprite--smile"></div>
+                </div>
+                <div class="it-descr">Выигрывай призы</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          
+        </div>
+      </div>
     </div>
     <div class="content mid"></div>
     <div class="content mid"></div>

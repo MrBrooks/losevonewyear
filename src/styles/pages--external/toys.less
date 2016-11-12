@@ -57,7 +57,11 @@
     max-width: 380px;
     canvas{
       z-index: 1000;
+      // @media screen and (max-width: @mobile){
+      //   width: 100%;
+      // }
     }
+    @media screen and (max-width: @mobile){}
     .message{
       position: absolute;
       left: 0;
@@ -68,6 +72,10 @@
       &:extend(.trall);
       &.ok{
         left: 380px;
+      }
+      @media screen and (max-width: @mobile){
+        width: 320px;
+        height: 320px;
       }
     }
     .card-backs{
@@ -88,6 +96,13 @@
           left: 0;
           transition-delay: 0ms;
         }
+        @media screen and (max-width: @mobile){
+          left: 320px;
+        }
+      }
+      @media screen and (max-width: @mobile){
+        width: 320px;
+        height: 320px;
       }
     }
     .trash{
@@ -182,4 +197,61 @@
   display: inline-flex;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.clear-all{
+  @media screen and (max-width: @mobile){
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+}
+.tabs.mobile-toy-tabs{
+  .pagination{
+    margin-top: 0px;
+  }
+  .item{
+    width: 25%;
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0;
+    &:after{
+      display: none;
+    }
+    &.active{
+      order: initial;
+      background-color: @green;
+    }
+    img{
+      margin: auto;
+      height: 50px;
+    }
+  }
+  .tab-content{
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    display: none;
+    flex-wrap: wrap;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    &.active{
+      display: inline-flex;
+    }
+    .pic{
+      width: 25%;
+      text-align: center;
+      max-height: 60px;
+      padding: 10px 0;
+    }
+    img{
+      height: 100%;
+      margin: auto;
+    }
+  }
+
 }
