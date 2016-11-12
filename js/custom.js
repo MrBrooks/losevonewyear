@@ -25,8 +25,14 @@ $(document).ready(function() {
   var svg_card, svg_message;
 
   var tabs = new Tabs({
-    btns: ".pagination .item",
-    tabs: ".tab-content"
+    btns: ".choose-send .pagination .item",
+    tabs: ".choose-send .tab-content"
+  });
+
+  var mobile_toy_tabs = new Tabs({
+    effect: "active",
+    btns: ".mobile-toy-tabs .item",
+    tabs: ".mobile-toy-tabs .tab-content"
   });
 
   
@@ -152,11 +158,16 @@ function CardData(){
 }
 
 function MessageBuilder(){
-  var canvas, message, background, message_text, text_box;
+  var canvas, message, background, message_text, text_box, size;
 
   function init(){
     canvas = new fabric.Canvas('canvas-message');
     message = $("#text-message");
+    // canvas_size = $(window).width() >= 768? 380 : 320;
+    // canvas.setDimensions({
+    //   width: size,
+    //   height: size
+    // });
     fabric.loadSVGFromURL('img/svg/happy_new_year.svg', function(els,opts){
       background = fabric.util.groupSVGElements(els,opts);
       background.width = 380;
@@ -191,7 +202,7 @@ function MessageBuilder(){
 
 function CardBuilder(){
   var elements, background_btns, card_builder, message, message_close_btn, backgrounds, canvas, tree_id, tree,
-    background_index, toy_layer, remove_btn, background;
+    background_index, toy_layer, remove_btn, background, canvas_size;
 
   this.setTree = function(id){
     if(!tree || (tree_id !== id)){
@@ -205,6 +216,7 @@ function CardBuilder(){
           selectable : false,
           hoverCursor: "auto"
         });
+        tree.scaleToWidth(canvas_size);
         canvas.add(tree);
         tree.center().setCoords().moveTo(1);
         tree.deletable = false;
@@ -213,16 +225,16 @@ function CardBuilder(){
   };
   this.toSVG = function(){
     return canvas.toSVG({
-      viewBox:{x:0 , y:0, width: 380, height: 380}
+      viewBox:{x:0 , y:0, width: canvas_size, height: canvas_size}
     });
   };
   this.unsetBackground = function(){
-    console.log(canvas.getObjects());
+    // console.log(canvas.getObjects());
     if(background){
       canvas.remove(background);
       canvas.renderAll();
     }
-    console.log(canvas.getObjects());
+    // console.log(canvas.getObjects());
   };
   this.setBackground = function(){
     fabric.loadSVGFromURL('img/svg/back-full-'+background_index+'.svg',function(els,opts){
@@ -231,11 +243,12 @@ function CardBuilder(){
       }
       background = fabric.util.groupSVGElements(els,opts);
       background.set({
-        width: 380,
-        height: 380,
+        // width: canvas_size,
+        // height: canvas_size,
         selectable: false,
         hoverCursor: "auto",
-      });
+      }).scaleToWidth(canvas_size);
+
       canvas.add(background);
       background.moveTo(0);
     });
@@ -249,15 +262,20 @@ function CardBuilder(){
   }
 
   function init(){
-    elements = $(".selector .pic");
-    background_btns = $(".selector label");
+    elements = $(".pic[data-type]");
+    background_btns = $("label[data-index]");
     card_builder = $("#card-builder");
     backgrounds = card_builder.find(".card-backs img");
-    remove_btn = $("#clear-toys");
+    remove_btn = $(".clear-all");
     message = card_builder.find(".message");
     message_close_btn = card_builder.find(".btn");
+    canvas_size = $(window).width() >= 768? 380 : 320;
     if(document.getElementById('canvas')){
       canvas = new fabric.Canvas('canvas');
+      canvas.setDimensions({
+        width: canvas_size,
+        height: canvas_size
+      });
       toy_layer = new fabric.Group();
     }
     tree_id = 1;
@@ -303,14 +321,14 @@ function CardBuilder(){
           strokeWidth : 3,
           deletable : true,
         });
-        el.scaleToWidth(40);
+        el.scaleToWidth(50);
         
         canvas.add(el);
         
         el.center().setCoords().bringToFront();
         el.on("moving",function(e){
           var center = this.getCenterPoint();
-          if( center.x >= 320 && center.y >= 320){
+          if( center.x >= canvas_size - 60 && center.y >= canvas_size - 60){
             this.remove();
           }
         });
@@ -396,19 +414,23 @@ function Navigation(){
         
         break;
       case "card-tree":
+        $("body").removeClass('card-toys-page');
         content_slider.trigger("to.owl.carousel",[1,400,true]);
         steps_bar.to(1);
         break;
 
       case "card-toys":
+        $("body").addClass('card-toys-page');
         card_builder.unsetBackground();
         card_builder.setTree(parseInt($("#tree-slider .active [data-tree]").attr("data-tree")));
         content_slider.trigger("to.owl.carousel",[2,400,true]);
         steps_bar.to(2);
-
+        $("body").removeClass('card-message-page');
         break;
 
       case "card-message":
+        $("body").removeClass('card-toys-page');
+        $("body").addClass('card-message-page');
         card_builder.setBackground();
         
         content_slider.trigger("to.owl.carousel",[3,400,true]);
@@ -417,7 +439,7 @@ function Navigation(){
         break;
 
       case "card-send":
-        
+        $("body").removeClass('card-message-page');
         svg_message = message_builder.toSVG();
         svg_card = card_builder.toSVG();
         $("#svg-card").html(svg_card);
@@ -515,7 +537,7 @@ function Tabs(options){
   var defs = {
     btns: ".tab-btn",
     tabs: ".tab-content",
-    effect: "class"
+    effect: false
   };
   var opts = $.extend(defs, options);
 
@@ -530,9 +552,17 @@ function Tabs(options){
 
   function onClick(){
       btns.removeClass('active');
-      tabs.slideUp(300);
+      if(opts.effect){
+        tabs.removeClass(opts.effect);
+      } else{
+        tabs.slideUp(300);
+      }
       var index = parseInt($(this).addClass('active').attr('data-index'));
-      $(tabs.get(index-1)).slideDown(300);
+      if(opts.effect){
+        $(tabs.get(index-1)).addClass(opts.effect);
+      } else{
+        $(tabs.get(index-1)).slideDown(300);
+      }
   }
   init();
 }
