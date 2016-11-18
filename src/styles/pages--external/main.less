@@ -3,10 +3,21 @@
   background-image: url(../img/images/background.jpg);
   .send-page &{
     background-attachment: fixed;
+    @media screen and (max-width: @mobile){
+      background-size: contain;
+      background-repeat: repeat;
+      background-attachment: initial;
+    }
+    
   }
   padding-top: 160px;
   @media screen and (max-height: @minh){
     padding-top: 150px;
+  }
+  .card-start &{
+    @media screen and (max-width: @mobile){
+      padding-top: 120px;
+    }
   }
   z-index: 3;
   .descr{

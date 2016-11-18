@@ -6,6 +6,16 @@
     display: block;
     clear: both;
   }
+  .dif{
+    @media screen and (max-width: @mobile){
+      display: block;
+    }
+  }
+  .btn{
+    @media screen and (max-width: @mobile){
+      margin-bottom: 30px;
+    }
+  }
   .to-tree{
     position: absolute;
     text-align: left;
@@ -16,6 +26,10 @@
     font-weight: 700;
     &:hover{
       text-decoration: underline;
+    }
+    @media screen and (max-width: @mobile){
+      color: @green;
+      left: 15px;
     }
   }
   .clear-all{
@@ -35,6 +49,11 @@
       display: inline-block;
       vertical-align: top;
     }
+    &:nth-child(4){
+      .label{
+        margin-right: 15px;
+      }
+    }
   }
   .label{
     font-weight: 700;
@@ -46,9 +65,14 @@
     vertical-align: middle;
     box-sizing: border-box;
   }
-  .controls, .card{
-    // width: 60%;
-    // float: left;
+  .controls{
+    opacity: 0;
+    transition: all 500ms;
+    transform: translateY(100px);
+    &.active{
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
   .card{
     // width: 40%;
@@ -61,7 +85,10 @@
       //   width: 100%;
       // }
     }
-    @media screen and (max-width: @mobile){}
+    @media screen and (max-width: @mobile){
+      max-width: 320px;
+      margin: auto;
+    }
     .message{
       position: absolute;
       left: 0;
@@ -85,6 +112,7 @@
       z-index: 999;
       width: 380px;
       height: 380px;
+      overflow: hidden;
       img{
         position: absolute;
         left: 380px;
@@ -202,13 +230,26 @@
 .clear-all{
   @media screen and (max-width: @mobile){
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
 }
 .tabs.mobile-toy-tabs{
+  margin-bottom: 10px;
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
   .pagination{
     margin-top: 0px;
+    display: block;
+    float: left;
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
   .item{
     width: 25%;
@@ -216,42 +257,69 @@
     padding: 10px;
     text-align: center;
     margin-bottom: 0;
+    float: left;
+    border-bottom: 5px solid transparent;
     &:after{
       display: none;
     }
     &.active{
       order: initial;
-      background-color: @green;
+      border-bottom: 5px solid @green;
+      background-color: transparent;
     }
     img{
       margin: auto;
       height: 50px;
     }
   }
+  .close-tab{
+    color: @green;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 10px 0;
+  }
   .tab-content{
-    display: -webkit-inline-flex;
-    display: -moz-inline-flex;
-    display: -ms-inline-flex;
-    display: -o-inline-flex;
-    display: inline-flex;
-    display: none;
-    flex-wrap: wrap;
+    // display: -webkit-inline-flex;
+    // display: -moz-inline-flex;
+    // display: -ms-inline-flex;
+    // display: -o-inline-flex;
+    // display: inline-flex;
+    // display: none;
+    // flex-wrap: wrap;
+    display: block;
+    position: fixed;
+    top: -200%;
+    left: 0;
     background-color: #fff;
+    z-index: 10000;
     margin-bottom: 20px;
     padding: 10px 0;
+    transition: all 500ms;
+    height: 100%;
+    &:after{
+      display: block;
+      clear: both;
+      content: '';
+    }
     &.active{
-      display: inline-flex;
+      // display: inline-flex;
+      top: 0;
     }
     .pic{
       width: 25%;
       text-align: center;
-      max-height: 60px;
+      float: left;
+      height: 60px;
+
       padding: 10px 0;
     }
     img{
-      height: 100%;
+      height: 40px;
       margin: auto;
     }
   }
-
+}
+.mobile-controls.choose-toys{
+  padding: 0;
 }

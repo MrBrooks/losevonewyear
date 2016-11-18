@@ -1,5 +1,11 @@
 .choose-message{
   padding: 50px 40px 0;
+  @media screen and (max-width: @mobile){
+    max-height: 500px;
+  }
+  .card-message-page &{
+    max-height: none;
+  }
   &:after{
     content: '';
     display: block;
@@ -26,6 +32,10 @@
     &:hover{
       text-decoration: underline;
     }
+    @media screen and (max-width: @mobile){
+      color: @green;
+      left: 15px;
+    }
   }
   .card-message{
     // width: 100% / 12 * 6;
@@ -48,6 +58,9 @@
         height: 320px;
       }
     }
+  }
+  .btn{
+    margin-bottom: 50px;
   }
   .card-message-description{
     // width: 100% / 12 * 6;

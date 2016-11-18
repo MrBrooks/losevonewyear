@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,700&subset=cyrillic');
 
 // GENEGAL TAGS
 body{
@@ -79,6 +79,9 @@ input[type="text"]{
     outline: none;
     // box-shadow: none;
   }
+  &.invalid{
+    box-shadow: 0px 3px 20.16px 0.84px rgba(255, 0, 0, 0.5);
+  }
 }
 
 
@@ -111,8 +114,8 @@ footer{
     }
   }
   .sound{
-    width: 21px;
-    height: 19px;
+    width: 30px;
+    height: 30px;
     overflow: hidden;
     margin: auto;
     margin-top: -5px;
@@ -125,7 +128,7 @@ footer{
     &.active{
       &>div{
         // left: -21px;
-        top: -19px;
+        top: -29px;
       }
     }
     &>div{
@@ -205,17 +208,29 @@ section{
   #content-slider{
     height: 100%;
     z-index: 3;
-    max-height: 600px;
+    // max-height: 600px;
     overflow: hidden;
+    @media screen and (max-width: @mobile){
+      // max-height: 600px;
+    }
     .send-page &{
-      max-height: none;
+      // max-height: none;
       overflow: auto;
     }
     .card-toys-page &{
-      max-height: 880px;
+      // max-height: 880px;
+      @media screen and (max-width: @mobile){
+        // max-height: 550px;
+      }
+      
+    }
+    .card-start &{
+      @media screen and (max-width: @mobile){
+        // max-height: 600px;
+      }
     }
     .card-message-page &{
-      max-height: 680px;
+      // max-height: 680px;
       // overflow: auto;
     }
     .owl-stage-outer,.owl-stage{
@@ -307,6 +322,10 @@ section{
     //   margin-bottom: 0;
     // }
   }
+  .card-start &.slideTop{
+    margin-top: -200px;
+    transition: all 0ms;
+  }
   &>div{
     position: absolute;
     margin: auto;
@@ -373,6 +392,14 @@ section{
       background-color: @blue-dark;
     }
   }
+  &--white{
+    background-color: #fff;
+    color: @green;
+    &:hover{
+      background-color: @green-dark;
+      color: white;
+    }
+  }
   &--normal{
     text-transform: none;
     border: 2px solid @blue;
@@ -393,6 +420,9 @@ section{
   margin-top: -300px;
   transition: all 500ms;
   transition-delay: 1500ms;
+  @media screen and (max-width: @mobile){
+    display: none;
+  }
   .card-start &{
     margin-top: 120px;
     @media screen and (max-height: @minh){
@@ -509,4 +539,52 @@ section{
 }
 .hidden-container{
   display: none;
+}
+#card-data{
+  display: none;
+}
+.popup{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.75);
+  opacity: 0;
+  display: none;
+  z-index: -1;
+  transition: opacity 500ms;
+  &.active{
+    opacity: 1;
+    display: block;
+    z-index: 2000;
+  }
+  &>div{
+    background-color: #fff;
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .popup-close-btn{
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-image: url(../img/svg/end.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    @media screen and (max-width: @mobile){
+      width: 30px;
+      height: 30px;
+      top: -30px;
+      right: -30px;
+    }
+  }
 }

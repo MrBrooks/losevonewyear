@@ -1,6 +1,12 @@
+<div class="popup">
+  <div class="popup-content">
+    <div id="player"></div>
+    <div class="popup-close-btn"></div>
+  </div>
+</div>
 <footer>
   <div class="main-site">
-  <a href=""><button class="btn btn--normal">Основной сайт</button></a>
+  <a href="https://shp-losevo.ru/" target="_blank"><button class="btn btn--normal">Основной сайт</button></a>
   </div>
   <div class="socials">
     <div id="sound-btn" class="sound active">
@@ -11,10 +17,10 @@
       <div class="soundof"></div>
     </div>
     <ul>
-      <li><a href=""><div class="svg-sprite--vk"></div></a></li>
-      <li><a href=""><div class="svg-sprite--inst"></div></a></li>
-      <li><a href=""><div class="svg-sprite--fb"></div></a></li>
-      <li><a href=""><div class="svg-sprite--youtube"></div></a></li>
+      <li><a href="http://vk.com/shplosevo"><div class="svg-sprite--vk"></div></a></li>
+      <li><a href="https://www.instagram.com/shplosevo/"><div class="svg-sprite--inst"></div></a></li>
+      <li><a href="https://www.facebook.com/shplosevo"><div class="svg-sprite--fb"></div></a></li>
+      <li><a href="http://www.youtube.com/channel/UCFnBb1B1rSrbKgeqs-8Ll0w"><div class="svg-sprite--youtube"></div></a></li>
     </ul>
     <div class="hashtag green">#вместесЛосево</div>
   </div>
@@ -30,10 +36,17 @@
   <div class="hidden-container">
   <canvas id="canvas-message" width="380" height="380"></canvas>
   </div>
+
+  <form action="" id="card-data">
+    <input id="svg-card-data" type="hidden" value="" name="svg-card">
+    <input id="svg-message-data" type="hidden" value="" name="svg-message">
+    <input  type="hidden" value="cards" name="post-type">
+  </form>
 </footer>
 
 <!-- JavaScript-->
 <!-- <script src="js/main.js"></script> -->
 <script src="js/vendor.js"></script>
 <script src="js/custom.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
